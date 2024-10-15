@@ -34,6 +34,7 @@ DOMAINS_TO_TEST = [
     "api.github.com",
     "assets-cdn.github.com",
     "raw.githubusercontent.com",
+    "4kvm.net",
 ]
 
 # DNS服务器列表
