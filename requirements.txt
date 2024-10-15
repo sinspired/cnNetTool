@@ -1,0 +1,4 @@
+dnspython==2.7.0
+ping3==4.0.8
+prettytable==3.11.0
+rich==13.9.2
