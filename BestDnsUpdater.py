@@ -70,7 +70,9 @@ DNS_SERVERS = {
 }
 
 
-def test_dns_server(server: str, domain: str, record_type: str) -> tuple[bool, float, list[str]]:
+def test_dns_server(
+    server: str, domain: str, record_type: str
+) -> tuple[bool, float, list[str]]:
     """
     测试指定的DNS服务器
 
@@ -88,9 +90,7 @@ def test_dns_server(server: str, domain: str, record_type: str) -> tuple[bool, f
         end_time = time.time()
         response_time = (end_time - start_time) * 1000  # 转换为毫秒
         ips = [str(rdata) for rdata in answers]
-        logger.debug(
-            f"成功解析 {domain} 使用 {server} ({record_type}): {ips}"
-        )
+        logger.debug(f"成功解析 {domain} 使用 {server} ({record_type}): {ips}")
         return True, response_time, ips
     except Exception as e:
         end_time = time.time()
@@ -129,7 +129,7 @@ def find_available_dns() -> tuple[dict, dict]:
     """
     dns_performance = {}
     domain_resolutions = {domain: {} for domain in DOMAINS_TO_TEST}
-    
+
     with ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
         future_to_server = {}
         for region, providers in DNS_SERVERS.items():
@@ -161,7 +161,7 @@ def find_available_dns() -> tuple[dict, dict]:
                 for domain, ips in resolutions.items():
                     domain_resolutions[domain][server] = ips
 
-                logger.info(
+                logger.debug(
                     f"{ip_version.upper()} DNS {server} ({region} - {provider}) 成功率 {success_rate:.2%}, 平均延迟 {avg_response_time:.2f}ms"
                 )
             except Exception as exc:
@@ -446,58 +446,30 @@ def print_available_dns(available_dns, best_dns_num):
             print(table)
             print()
 
+
 def get_input_with_timeout(prompt, timeout=10):
-    print(prompt, end='', flush=True)
+    print(prompt, end="", flush=True)
     user_input = []
-    
+
     def input_thread():
         user_input.append(input())
-    
+
     thread = threading.Thread(target=input_thread)
     thread.daemon = True
     thread.start()
-    
+
     thread.join(timeout)
     if thread.is_alive():
         print("\n已超时，自动执行...")
-        return 'y'
+        return "y"
     print()  # 换行
-    return user_input[0].strip() if user_input else 'y'
+    return user_input[0].strip() if user_input else "y"
+
 
 def main():
     """
     主函数
     """
-    parser = argparse.ArgumentParser(description="DNS解析器和设置工具")
-    parser.add_argument("--debug", action="store_true", help="启用调试日志")
-    parser.add_argument(
-        "--show-availbale-list",
-        "--list",
-        action="store_true",
-        help="显示可用dns列表，通过 --num 控制娴熟数量",
-    )
-    parser.add_argument(
-        "--best-dns-num",
-        "--num",
-        default=BEST_DNS_NUM,
-        type=int,
-        action="store",
-        help="显示最佳DNS服务器的数量",
-    )
-    parser.add_argument(
-        "--algorithm",
-        "--mode",
-        choices=["region", "overall"],
-        default="region",
-        help="推荐最佳DNS的算法 (按区域或整体)",
-    )
-    parser.add_argument(
-        "--show-resolutions",
-        "--show",
-        action="store_true",
-        help="显示域名解析结果",
-    )
-    args = parser.parse_args()
 
     # 创建自定义的日志格式化器
     log_formatter = logging.Formatter(
@@ -525,9 +497,13 @@ def main():
     if available_dns["ipv4"] or available_dns["ipv6"]:
         if args.show_resolutions:
             logger.info("显示域名解析结果...")
-            dns_performance = {server: info for dns_list in available_dns.values() for server, info in dns_list}
+            dns_performance = {
+                server: info
+                for dns_list in available_dns.values()
+                for server, info in dns_list
+            }
             print_domain_resolutions(domain_resolutions, dns_performance)
-    
+
         # 防止 best_dns_num 数值超过数组长度
         num_servers = min(len(available_dns["ipv4"]), len(available_dns["ipv6"]))
         if args.best_dns_num > num_servers:
@@ -546,7 +522,9 @@ def main():
                     recommended_dns[ip_version], ip_version, available_dns
                 )
 
-        confirm = get_input_with_timeout("\n是否要设置系统DNS为推荐的最佳服务器？(y/n，10秒后自动执行): ", 10)
+        confirm = get_input_with_timeout(
+            "\n是否要设置系统DNS为推荐的最佳服务器？(y/n，10秒后自动执行): ", 10
+        )
         if confirm.lower() == "y":
             set_dns_servers(recommended_dns["ipv4"], recommended_dns["ipv6"])
             logger.info("DNS服务器已更新")
@@ -554,6 +532,7 @@ def main():
             logger.info("操作已取消")
     else:
         logger.warning("未找到合适的DNS服务器")
+
 
 def is_admin() -> bool:
     """
@@ -584,7 +563,41 @@ def run_as_admin():
         os.execvp("sudo", ["sudo", "python3"] + sys.argv)
     sys.exit(0)
 
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="DNS解析器和设置工具,请使用管理员权限运行"
+    )
+    parser.add_argument("--debug", action="store_true", help="启用调试日志")
+    parser.add_argument(
+        "--show-availbale-list",
+        "--list",
+        action="store_true",
+        help="显示可用dns列表，通过 --num 控制娴熟数量",
+    )
+    parser.add_argument(
+        "--best-dns-num",
+        "--num",
+        default=BEST_DNS_NUM,
+        type=int,
+        action="store",
+        help="显示最佳DNS服务器的数量",
+    )
+    parser.add_argument(
+        "--algorithm",
+        "--mode",
+        choices=["region", "overall"],
+        default="region",
+        help="推荐最佳DNS的算法 (按区域或整体)",
+    )
+    parser.add_argument(
+        "--show-resolutions",
+        "--show",
+        action="store_true",
+        help="显示域名解析结果",
+    )
+    args = parser.parse_args()
+
     if not is_admin():
         logger.info("需要管理员权限来设置DNS服务器。正在尝试提升权限...")
         run_as_admin()

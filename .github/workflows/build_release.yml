@@ -1,5 +1,4 @@
 name: Build and Release
-
 on:
   push:
     tags:
@@ -7,20 +6,26 @@ on:
 
 jobs:
   build-and-release:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.12]
-        os: [windows, linux]
-        arch: [x86, x64]
+        include:
+          - os: ubuntu-latest
+            platform: Linux
+          - os: windows-latest
+            platform: Windows
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
 
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
       with:
-        python-version: ${{ matrix.python-version }}
+        fetch-depth: 0  # 确保检出完整的Git历史
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
 
     - name: Install dependencies
       run: |
@@ -28,26 +33,72 @@ jobs:
         pip install -r requirements.txt
         pip install pyinstaller
 
-    - name: Install Wine for Windows builds
-      if: matrix.os == 'windows'
-      run: sudo apt-get install -y wine
-
-    - name: Build executables
+    - name: Build executables (Linux)
+      if: matrix.os == 'ubuntu-latest'
       run: |
         for script in BestDnsUpdater.py BestHostsUpdater-IPv4.py BestHostsUpdater.py; do
-          if [[ "${{ matrix.os }}" == "windows" ]]; then
-            wine pyinstaller --onefile "$script"
-            mv "dist/${script%.py}.exe" "dist/${script%.py}-${{ matrix.os }}-${{ matrix.arch }}.exe"
-          else
-            pyinstaller --onefile "$script"
-            mv "dist/${script%.py}" "dist/${script%.py}-${{ matrix.os }}-${{ matrix.arch }}"
-          fi
+          pyinstaller --onefile "$script"
+          mv "dist/${script%.py}" "dist/${script%.py}-Linux-x64"
         done
+        zip -j "cnNetTool-Linux-x64.zip" dist/*-Linux-x64
 
-    - name: Zip executables
+    - name: Build executables (Windows)
+      if: matrix.os == 'windows-latest'
       run: |
-        zip -j "dist/${{ matrix.os }}-${{ matrix.arch }}-executables.zip" dist/*
+        $scripts = @("BestDnsUpdater.py", "BestHostsUpdater-IPv4.py", "BestHostsUpdater.py")
+        if (Test-Path -Path "dist") {
+            Remove-Item -Recurse -Force "dist"
+        }
+        foreach ($script in $scripts) {
+          pyinstaller --onefile $script --uac-admin 
+          $exeName = $script -replace '\.py$', ''
+          Move-Item "dist\$exeName.exe" "dist\$exeName-Windows-x64.exe"
+        }
+        Compress-Archive -Path dist\*-Windows-x64.exe -DestinationPath "cnNetTool-Windows-x64.zip"
+      shell: pwsh
 
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.platform }}-executables
+        path: |
+          cnNetTool-Linux-x64.zip
+          cnNetTool-Windows-x64.zip
+
+  create-release:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # 确保检出完整的Git历史
+
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+
+    - name: Get tag description
+      id: tag_description
+      run: |
+        TAG_DESCRIPTION=$(git tag -l --format='%(contents)' ${{ github.ref_name }})
+        echo "tag_description=${TAG_DESCRIPTION}" >> $GITHUB_ENV
+
+    - name: Get latest commit message
+      id: commit_message
+      run: |
+        COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+        echo "commit_message=${COMMIT_MESSAGE}" >> $GITHUB_ENV
+
+    - name: Delete existing release
+      uses: dev-drprasad/delete-tag-and-release@v0.2.1
+      with:
+        tag_name: ${{ github.ref_name }}
+        delete_release: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -55,16 +106,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref_name }}
-        release_name: Release ${{ github.ref_name }}
+        release_name: "${{ github.ref_name }} ${{ env.tag_description }}"
         draft: false
         prerelease: false
 
     - name: Upload Release Assets
-      uses: actions/upload-release-asset@v1
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          **/cnNetTool-Linux-x64.zip
+          **/cnNetTool-Windows-x64.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/*-executables.zip
-        asset_name: ${{ matrix.os }}-${{ matrix.arch }}-executables.zip
-        asset_content_type: application/zip

@@ -30,7 +30,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Hosts Updater Script")
+    parser = argparse.ArgumentParser(description="Hosts文件更新工具，请使用管理员权限运行")
     parser.add_argument(
         "--log-level",
         default="INFO",
