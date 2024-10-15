@@ -13,6 +13,8 @@ jobs:
             platform: Linux
           - os: windows-latest
             platform: Windows
+          - os: macos-latest
+            platform: macOS
     runs-on: ${{ matrix.os }}
     permissions:
       contents: write
@@ -57,6 +59,15 @@ jobs:
         Compress-Archive -Path dist\*-Windows-x64.exe -DestinationPath "cnNetTool-Windows-x64.zip"
       shell: pwsh
 
+    - name: Build executables (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        for script in BestDnsUpdater.py BestHostsUpdater-IPv4.py BestHostsUpdater.py; do
+          pyinstaller --onefile "$script"
+          mv "dist/${script%.py}" "dist/${script%.py}-macOS-x64"
+        done
+        zip -j "cnNetTool-macOS-x64.zip" dist/*-macOS-x64
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -64,6 +75,7 @@ jobs:
         path: |
           cnNetTool-Linux-x64.zip
           cnNetTool-Windows-x64.zip
+          cnNetTool-macOS-x64.zip
 
   create-release:
     needs: build-and-release
@@ -116,5 +128,6 @@ jobs:
         files: |
           **/cnNetTool-Linux-x64.zip
           **/cnNetTool-Windows-x64.zip
+          **/cnNetTool-macOS-x64.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
