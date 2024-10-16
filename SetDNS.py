@@ -254,64 +254,78 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
         for line in interfaces.split("\n"):
             if "Connected" in line or "已连接" in line:
                 interface = line.split()[-1]
+                # 更严格地检查并忽略WSL相关的虚拟网卡
+                if "WSL" in interface or "Hyper-V" in interface:
+                    logger.info(f"跳过虚拟网卡: {interface}")
+                    continue
                 if ipv4_dns_list:
                     logger.debug(
                         f"设置IPv4 DNS for {interface}: {', '.join(ipv4_dns_list)}"
                     )
-                    subprocess.run(
-                        [
-                            "netsh",
-                            "interface",
-                            "ipv4",
-                            "set",
-                            "dns",
-                            interface,
-                            "static",
-                            ipv4_dns_list[0],
-                        ]
-                    )
-                    for dns in ipv4_dns_list[1:]:
+                    try:
                         subprocess.run(
                             [
                                 "netsh",
                                 "interface",
                                 "ipv4",
-                                "add",
+                                "set",
                                 "dns",
                                 interface,
-                                dns,
-                                "index=2",
-                            ]
+                                "static",
+                                ipv4_dns_list[0],
+                            ],
+                            check=True
                         )
+                        for dns in ipv4_dns_list[1:]:
+                            subprocess.run(
+                                [
+                                    "netsh",
+                                    "interface",
+                                    "ipv4",
+                                    "add",
+                                    "dns",
+                                    interface,
+                                    dns,
+                                    "index=2",
+                                ],
+                                check=True
+                            )
+                    except subprocess.CalledProcessError as e:
+                        logger.error(f"设置IPv4 DNS for {interface}失败: {e}")
                 if ipv6_dns_list:
                     logger.debug(
                         f"设置IPv6 DNS for {interface}: {', '.join(ipv6_dns_list)}"
                     )
-                    subprocess.run(
-                        [
-                            "netsh",
-                            "interface",
-                            "ipv6",
-                            "set",
-                            "dns",
-                            interface,
-                            "static",
-                            ipv6_dns_list[0],
-                        ]
-                    )
-                    for dns in ipv6_dns_list[1:]:
+                    try:
                         subprocess.run(
                             [
                                 "netsh",
                                 "interface",
                                 "ipv6",
-                                "add",
+                                "set",
                                 "dns",
                                 interface,
-                                dns,
-                                "index=2",
-                            ]
+                                "static",
+                                ipv6_dns_list[0],
+                            ],
+                            check=True
                         )
+                        for dns in ipv6_dns_list[1:]:
+                            subprocess.run(
+                                [
+                                    "netsh",
+                                    "interface",
+                                    "ipv6",
+                                    "add",
+                                    "dns",
+                                    interface,
+                                    dns,
+                                    "index=2",
+                                ],
+                                check=True
+                            )
+                    except subprocess.CalledProcessError as e:
+                        logger.error(f"设置IPv6 DNS for {interface}失败: {e}")
 
     elif system == "Linux":
         with open("/etc/resolv.conf", "w") as f:
