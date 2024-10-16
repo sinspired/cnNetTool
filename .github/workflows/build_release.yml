@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Ensures full Git history is checked out
+        fetch-depth: 0
 
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
@@ -72,10 +72,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.platform }}-executables
-        path: |
-          cnNetTool-Linux-x64.zip
-          cnNetTool-Windows-x64.zip
-          cnNetTool-macOS-x64.zip
+        path: cnNetTool-${{ matrix.platform }}-x64.zip
 
   create-release:
     needs: build-and-release
@@ -86,7 +83,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Ensures full Git history is checked out
+        fetch-depth: 0
 
     - name: Download all artifacts
       uses: actions/download-artifact@v3
@@ -105,17 +102,13 @@ jobs:
         echo "commit_message=${COMMIT_MESSAGE}" >> $GITHUB_OUTPUT
       shell: bash
 
-    - name: Delete existing release if exists
-      run: |
-        RELEASE_ID=$(gh release view ${{ github.ref_name }} --json id --jq '.id' || echo "")
-        if [ -n "$RELEASE_ID" ]; then
-          gh release delete ${{ github.ref_name }} --yes
-          echo "Release deleted: ${{ github.ref_name }}"
-        else
-          echo "No existing release found for: ${{ github.ref_name }}"
-        fi
-      shell: bash
-    
+    - name: Delete existing release
+      uses: dev-drprasad/delete-tag-and-release@v0.2.1
+      with:
+        tag_name: ${{ github.ref_name }}
+        delete_release: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: List Files
       run: ls -R ./
