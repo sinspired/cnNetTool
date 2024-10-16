@@ -7,7 +7,8 @@
 
 基于Python的网络小工具。
 
-针对某些区域DNS污染问题，自动筛选解析速度最快的 DNS 服务器、自动设置hosts文件（包括tinyManager刮削源tmdb.org、themoviedb.org，Google/chrome网页翻译等），支持Windows、Linux、MacOS。
+针对某些区域DNS污染问题，自动筛选解析速度最快的 DNS 服务器、自动设置hosts文件（包括tinyMediaManager刮削源tmdb.org、themoviedb.org，Google/chrome网页翻译等），支持Windows、Linux、MacOS。
+
 
 # 安装
 
