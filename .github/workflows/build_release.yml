@@ -105,13 +105,17 @@ jobs:
         echo "commit_message=${COMMIT_MESSAGE}" >> $GITHUB_OUTPUT
       shell: bash
 
-    - name: Delete existing release
-      uses: dev-drprasad/delete-tag-and-release@v0.2.1
-      with:
-        tag_name: ${{ github.ref_name }}
-        delete_release: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Delete existing release if exists
+      run: |
+        RELEASE_ID=$(gh release view ${{ github.ref_name }} --json id --jq '.id' || echo "")
+        if [ -n "$RELEASE_ID" ]; then
+          gh release delete ${{ github.ref_name }} --yes
+          echo "Release deleted: ${{ github.ref_name }}"
+        else
+          echo "No existing release found for: ${{ github.ref_name }}"
+        fi
+      shell: bash
+    
 
     - name: List Files
       run: ls -R ./
