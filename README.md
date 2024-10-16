@@ -24,7 +24,7 @@ pip install -r requirements.txt
 
 **CloudflareBestIP** 可以接受以下参数：
 
-### DNS 服务器工具 `BestDnsUpdater.py`
+### DNS 服务器工具 `SetDNS.py`
 
 * --debug 启用调试日志
 * --show-availbale-list, --list 显示可用dns列表，通过 --num 控制娴熟数量
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 * --algorithm --mode {region,overall} 默认 `region` 平衡IPv4和ipv6 DNS
 * --show-resolutions, --show 显示域名解析结果
 
-### Hosts文件工具 `BestHostsUpdater.py`
+### Hosts文件工具 `SetHosts.py`
 
 * --log-level 设置日志输出等级，'DEBUG', 'INFO', 'WARNING', 'ERROR'
 * --num-fastest 设置选择的最快IP数量
@@ -40,17 +40,17 @@ pip install -r requirements.txt
 
 命令行键入 `-h` `help` 获取帮助
 
-`py BestDnsUpdater.py -h`
+`py SetDNS.py -h`
 
-`py BestHostsUpdater.py -h`
+`py SetHosts.py -h`
 
 # 运行
 
 请使用管理员权限，在项目目录运行，分别设置解析最快的DNS服务器，更新hosts文件。 **接受传递参数，大部分时候直接运行即可**。
 
 ```bash
-py BestDnsUpdater.py 
-py BestHostsUpdater.py
+py SetDNS.py 
+py SetHosts.py
 ```
 
 # 最新发行版下载
@@ -60,8 +60,8 @@ Windows下载可执行文件双击运行即可，注意使用管理员权限。l
 或在命令行设置参数运行：
 
 ```pwsh
-./BestDnsUpdater.exe --best-dns-num 10
-./BestHostsUpdater.exe --num-fastest 3 --max-latency 500 
+./SetDNS.exe --best-dns-num 10
+./SetHosts.exe --num-fastest 3 --max-latency 500 
 ```
 
 [![Release Detail](https://img.shields.io/github/v/release/sinspired/cnNetTool?sort=date&display_name=release&logo=github&label=Release)](https://github.com/sinspired/cnNetTool/releases/latest)
