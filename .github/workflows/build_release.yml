@@ -43,10 +43,6 @@ jobs:
           mv "dist/${script%.py}" "dist/${script%.py}-Linux-x64"
         done
         zip -j "cnNetTool-Linux-x64.zip" dist/*-Linux-x64
-        
-    - name: Fix file permissions
-      run: |
-        chmod -R 755 ./dist
 
     - name: Build executables (Windows)
       if: matrix.os == 'windows-latest'
