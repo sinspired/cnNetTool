@@ -128,7 +128,7 @@ jobs:
         Changes in this release:
         ${{ steps.commit_message.outputs.commit_message }}" \
           --draft=false \
-          ./cnNetTool-Linux-x64.zip \
-          ./cnNetTool-Windows-x64.zip \
-          ./cnNetTool-macOS-x64.zip 
+          **/cnNetTool-Linux-x64.zip
+          **/cnNetTool-Windows-x64.zip
+          **/cnNetTool-macOS-x64.zip
       shell: bash
