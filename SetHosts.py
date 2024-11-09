@@ -85,6 +85,11 @@ class SetHosts:
             "223.5.5.5",  # Alibaba DNS (IPv4)
             "119.29.29.29",  # DNSPod (IPv4)
             "2400:3200::1",  # Alibaba DNS (IPv6)
+            "8.8.8.8",  # Google Public DNS (IPv4)
+            "2001:4860:4860::8888",  # Google Public DNS (IPv6)
+            "114.114.114.114",  # 114 dNS
+            "208.67.222.222",  # Open DNS (IPv4)
+            "2620:0:ccc::2",  # Open DNS (IPv6)
         ]
         self.max_latency = args.max_latency
         self.hosts_num = args.hosts_num
@@ -309,6 +314,7 @@ class SetHosts:
         with open(self.hosts_file_path, "w") as f:
             f.write("\n".join(new_content))
 
+    # 更新hosts文件
     async def update_hosts(self):
         all_entries = []
         for i, group in enumerate(self.domain_groups, 1):
@@ -319,19 +325,19 @@ class SetHosts:
             for domain in group.domains:
                 resolved_ips = await self.resolve_domain(domain)
                 all_ips.update(resolved_ips)
-            
+
             if not all_ips:
                 logging.warning(f"组 {group.name} 未找到任何可用IP。跳过该组。")
                 continue
-                
+
             rprint(f"  找到 {len(all_ips)} 个候选IP")
-            
+
             # 2. 为整个组测试所有可用IP，使用所有域名进行测试
             fastest_ips = await self.get_best_hosts(
                 [group.domains[0]],  # 只需传入一个域名，因为只是用来测试IP
                 # group.domains,  # 传入所有域名以获得更准确的延迟测试结果
                 all_ips,
-                self.max_latency
+                self.max_latency,
             )
 
             if not fastest_ips:
@@ -356,39 +362,43 @@ class SetHosts:
 
 # 域名组配置
 DOMAIN_GROUPS = [
-    DomainGroup(
-        name="GitHub主站",
-        domains=[
-            "github.com",
-        ],
-        ips={
-            "20.205.243.166",
-        },
-    ),
-    DomainGroup(
-        name="GitHub API",
-        domains=[
-            "api.github.com",
-        ],
-        ips={
-            "20.205.243.168",
-        },
-    ),
-    DomainGroup(
-        name="GitHub CDN",
-        domains=[
-            "raw.githubusercontent.com",
-            "raw.github.com",
-            "github-releases.githubusercontent.com",
-            "objects.githubusercontent.com",
-        ],
-        ips={
-            "185.199.108.133",
-            "185.199.109.133",
-            "185.199.110.133",
-            "185.199.111.133",
-        },
-    ),
+    # DomainGroup(
+    #     name="GitHub主站",
+    #     domains=[
+    #         "github.com",
+    #     ],
+    #     ips={
+    #         "20.205.243.166",
+    #         "20.27.177.113",
+    #         "20.207.73.82",
+    #         "20.233.83.145 ",
+    #         "140.82.121.4 ",
+    #     },
+    # ),
+    # DomainGroup(
+    #     name="GitHub API",
+    #     domains=[
+    #         "api.github.com",
+    #     ],
+    #     ips={
+    #         "20.205.243.168",
+    #     },
+    # ),
+    # DomainGroup(
+    #     name="GitHub CDN",
+    #     domains=[
+    #         "raw.githubusercontent.com",
+    #         "raw.github.com",
+    #         "github-releases.githubusercontent.com",
+    #         "objects.githubusercontent.com",
+    #     ],
+    #     ips={
+    #         "185.199.108.133",
+    #         "185.199.109.133",
+    #         "185.199.110.133",
+    #         "185.199.111.133",
+    #     },
+    # ),
     DomainGroup(
         name="TMDB API",
         domains=[
@@ -465,6 +475,15 @@ DOMAIN_GROUPS = [
             "2a00:1450:4001:803::201a",
             "35.210.233.33",
             "74.125.204.139",
+            "2607:f8b0:4004:c07::66",
+"2607:f8b0:4004:c07::71",
+"2607:f8b0:4004:c07::8a",
+"2607:f8b0:4004:c07::8b",
+"172.253.62.100",
+"172.253.62.101",
+"172.253.62.102",
+"172.253.62.103",
+
         },
     ),
     DomainGroup(

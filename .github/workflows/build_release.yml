@@ -52,7 +52,15 @@ jobs:
             Remove-Item -Recurse -Force "dist"
         }
         foreach ($script in $scripts) {
-          pyinstaller --onefile $script --uac-admin 
+          $icoName = $script -replace '\.py$', '.ico'
+
+          if (Test-Path -Path $icoName) {
+              pyinstaller --onefile $script --uac-admin --icon $icoName
+          } else {
+              pyinstaller --onefile $script --uac-admin
+          }
+          # pyinstaller --onefile $script --uac-admin 
+          
           $exeName = $script -replace '\.py$', ''
           Move-Item "dist\$exeName.exe" "dist\$exeName-Windows-x64.exe"
         }
