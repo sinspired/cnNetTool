@@ -1,0 +1,24 @@
+*.egg-info
+*.pyc
+.pybuild
+*.spec
+__pycache__
+build
+dist
+*test*.*
+.idea/
+
+# https://github.com/phusion/debian-packaging-for-the-modern-developer/blob/master/.gitignore
+debhelper-build-stamp
+.DS_Store
+.debhelper
+*.deb
+*.dsc
+*.build
+*.buildinfo
+*.changes
+*.tar.gz
+*.log
+*.substvars
+*.csv
+.vagrant

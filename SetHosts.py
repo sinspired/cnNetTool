@@ -307,7 +307,8 @@ class SetHosts:
 
         rprint("\n[bold yellow]正在更新hosts文件...[/bold yellow]")
         for entry in new_entries:
-            new_content.append(f"{entry} #mkhosts")
+            # new_content.append(f"{entry} #mkhosts")
+            new_content.append(f"{entry}")
             rprint(f"添加条目:{entry}")
 
         new_content.append(f"")
@@ -347,7 +348,7 @@ class SetHosts:
             # 3. 将最快的IP应用到组内所有域名
             rprint(f"\n为组内所有域名应用发现的最快IP:")
             for domain in group.domains:
-                new_entries = [f"{ip} {domain}" for ip, latency in fastest_ips]
+                new_entries = [f"{ip}\t{domain}" for ip, latency in fastest_ips]
                 rprint(f"    {domain}:")
                 # for entry in new_entries:
                 #     rprint(f"      {entry}")
@@ -466,24 +467,23 @@ DOMAIN_GROUPS = [
         ips={
             "216.239.32.40",
             "2404:6800:4008:c15::94",
-            "35.197.239.137",
             "2a00:1450:4001:829::201a",
             "2404:6800:4008:c13::5a",
-            "35.186.181.189",
-            "35.189.113.240",
-            "35.228.168.221",
             "2a00:1450:4001:803::201a",
-            "35.210.233.33",
             "74.125.204.139",
             "2607:f8b0:4004:c07::66",
-"2607:f8b0:4004:c07::71",
-"2607:f8b0:4004:c07::8a",
-"2607:f8b0:4004:c07::8b",
-"172.253.62.100",
-"172.253.62.101",
-"172.253.62.102",
-"172.253.62.103",
-
+            "2607:f8b0:4004:c07::71",
+            "2607:f8b0:4004:c07::8a",
+            "2607:f8b0:4004:c07::8b",
+            "172.253.62.100",
+            "172.253.62.101",
+            "172.253.62.102",
+            "172.253.62.103",
+            # "35.197.239.137",
+            # "35.186.181.189",
+            # "35.189.113.240",
+            # "35.228.168.221",
+            # "35.210.233.33",
         },
     ),
     DomainGroup(
