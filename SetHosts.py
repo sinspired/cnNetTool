@@ -229,7 +229,7 @@ class SetHosts:
 
         valid_results = [result for result in results if result[1] < latency_limit]
         if not valid_results:
-            logging.warning(f"未找到延迟小于 {latency_limit}ms 的IP。")
+            logging.warning(f"[bold red]未找到延迟小于 {latency_limit}ms 的IP。[/bold red]")
             return []
 
         ipv4_results = [r for r in valid_results if not self.is_ipv6(r[0])]
@@ -349,10 +349,11 @@ class SetHosts:
             rprint(f"\n为组内所有域名应用发现的最快IP:")
             for domain in group.domains:
                 new_entries = [f"{ip}\t{domain}" for ip, latency in fastest_ips]
-                rprint(f"    {domain}:")
+                rprint(f"    {domain}")
                 # for entry in new_entries:
                 #     rprint(f"      {entry}")
                 all_entries.extend(new_entries)
+            rprint("\n[green]---------------------------------------------------------[/green]")
 
         if all_entries:
             self.write_to_hosts_file(all_entries)
@@ -520,6 +521,7 @@ async def main():
     rprint(
         f"[bold]代码运行时间:[/bold] [cyan]{elapsed_time.total_seconds():.2f} 秒[/cyan]"
     )
+    input("\n任务执行完毕，按任意键退出！")
 
 
 def is_admin() -> bool:

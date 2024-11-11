@@ -543,10 +543,12 @@ def main():
         if confirm.lower() == "y":
             set_dns_servers(recommended_dns["ipv4"], recommended_dns["ipv6"])
             logger.info("DNS服务器已更新")
+            input("\n任务执行完毕，按任意键退出！")
         else:
             logger.info("操作已取消")
     else:
         logger.warning("未找到合适的DNS服务器")
+        input("\n任务执行失败，按任意键退出！")
 
 
 def is_admin() -> bool:
