@@ -7,6 +7,7 @@ build
 dist
 *test*.*
 .idea/
+*cache/
 
 # https://github.com/phusion/debian-packaging-for-the-modern-developer/blob/master/.gitignore
 debhelper-build-stamp
