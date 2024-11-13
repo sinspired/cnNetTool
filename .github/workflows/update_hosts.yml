@@ -33,17 +33,17 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # 添加详细输出以便调试
-          pip install -r requirements.txt -v
-          # 验证安装
-          pip list | grep dns
+          sudo pip install -r requirements.txt
+          echo "Installed packages:"
+          sudo pip list
       
       - name: Run hosts update script
         run: |
-          # 添加详细输出以便调试
+          echo "Python version and location:"
           python -V
           which python
-          sudo -E python SetHosts.py --verbose
+          echo "Running script with sudo..."
+          sudo python SetHosts.py --verbose
       
       - name: Commit and push changes
         env:
