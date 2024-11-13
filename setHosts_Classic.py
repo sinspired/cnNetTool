@@ -1057,7 +1057,10 @@ async def main():
     rprint(
         f"[bold]代码运行时间:[/bold] [cyan]{total_time.total_seconds():.2f} 秒[/cyan]"
     )
-    input("\n任务执行完毕，按任意键退出！")
+
+    if getattr(sys, "frozen", False):
+        # 如果打包为可执行程序时
+        input("\n任务执行完毕，按任意键退出！")
 
 
 if __name__ == "__main__":

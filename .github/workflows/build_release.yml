@@ -38,7 +38,7 @@ jobs:
     - name: Build executables (Linux)
       if: matrix.os == 'ubuntu-latest'
       run: |
-        for script in SetDNS.py SetHosts.py SetHosts_Classic.py; do
+        for script in setDNS.py setHosts.py setHosts_Classic.py; do
           pyinstaller --onefile "$script"
           mv "dist/${script%.py}" "dist/${script%.py}-Linux-x64"
         done
@@ -47,7 +47,7 @@ jobs:
     - name: Build executables (Windows)
       if: matrix.os == 'windows-latest'
       run: |
-        $scripts = @("SetDNS.py", "SetHosts.py", "SetHosts_Classic.py")
+        $scripts = @("setDNS.py", "setHosts.py", "setHosts_Classic.py")
         if (Test-Path -Path "dist") {
             Remove-Item -Recurse -Force "dist"
         }
@@ -70,7 +70,7 @@ jobs:
     - name: Build executables (macOS)
       if: matrix.os == 'macos-latest'
       run: |
-        for script in SetDNS.py SetHosts.py SetHosts_Classic.py; do
+        for script in setDNS.py setHosts.py setHosts_Classic.py; do
           pyinstaller --onefile "$script"
           mv "dist/${script%.py}" "dist/${script%.py}-macOS-x64"
         done

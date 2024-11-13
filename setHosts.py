@@ -683,9 +683,11 @@ class HostsManager:
                 f"\n[blue]已生成 hosts 文件,位于: [underline]hosts[/underline][/blue]"
             )
 
-        Utils.write_readme_file(
-            save_hosts_content, "README_template.md", f"{update_time}"
-        )
+        if not getattr(sys, "frozen", False):
+            # 如果未打包为可执行程序
+            Utils.write_readme_file(
+                save_hosts_content, "README_template.md", f"{update_time}"
+            )
 
 
 # -------------------- 主控制模块 -------------------- #
@@ -1100,6 +1102,7 @@ class Config:
     @staticmethod
     def get_dns_cache_file() -> Path:
         """获取 DNS 缓存文件路径，并确保目录存在。"""
+
         if getattr(sys, "frozen", False):
             # 打包后的执行文件路径
             # current_dir = Path(sys.executable).resolve().parent
@@ -1172,7 +1175,10 @@ async def main():
     rprint(
         f"[bold]代码运行时间:[/bold] [cyan]{total_time.total_seconds():.2f} 秒[/cyan]"
     )
-    input("\n任务执行完毕，按任意键退出！")
+
+    if getattr(sys, "frozen", False):
+        # 如果打包为可执行程序时
+        input("\n任务执行完毕，按任意键退出！")
 
 
 if __name__ == "__main__":

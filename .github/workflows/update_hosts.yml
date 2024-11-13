@@ -2,6 +2,9 @@ name: Update hosts
 
 on:
   push:
+    paths:
+      - 'setHosts.py'
+      - 'requirements.txt'
   schedule:
     - cron: '0 */4 * * *'
   workflow_dispatch:
@@ -22,7 +25,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,28 +36,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           sudo pip install -r requirements.txt
-          echo "Installed packages:"
-          sudo pip list
       
       - name: Run hosts update script
         run: |
-          echo "Python version and location:"
-          python -V
-          which python
-          echo "Running script with sudo..."
-          sudo python SetHosts.py --verbose
+          sudo python setHosts.py
       
       - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.email "sinspired@gmail.com"
-          git config --global user.name "action_bot"
-          
-          if [[ -n $(git status -s) ]]; then
-            git add .
-            git commit -m "chore: update hosts content [skip ci]"
-            git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          else
-            echo "No changes to commit"
-          fi
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "更新 hosts"
+          file_pattern: '.'
+          commit_user_name: action_bot
+          commit_user_email: sinspired@gmail.com
+          push_options: '--force'
