@@ -2,18 +2,17 @@ name: Update hosts
 
 on:
   push:
-    paths:
-      - 'setHosts.py'
-      - 'requirements.txt'
   schedule:
     - cron: '0 */4 * * *'
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   update-hosts:
     runs-on: ubuntu-latest
     
-    # 添加并发限制，避免同时运行多个工作流
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
@@ -22,32 +21,41 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1  # 减少克隆深度，加快检出速度
+          fetch-depth: 1
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Set up Python
-        uses: actions/setup-python@v5  # 使用最新的 v5 版本
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'  # 启用 pip 缓存
+          cache: 'pip'
       
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          # 添加详细输出以便调试
+          pip install -r requirements.txt -v
+          # 验证安装
+          pip list | grep dns
       
       - name: Run hosts update script
         run: |
-          sudo python setHosts.py
+          # 添加详细输出以便调试
+          python -V
+          which python
+          sudo -E python SetHosts.py --verbose
       
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "sinspired@gmail.com"
           git config --global user.name "action_bot"
           
           if [[ -n $(git status -s) ]]; then
             git add .
-            git commit -m "更新 hosts 内容"
-            git push
+            git commit -m "chore: update hosts content [skip ci]"
+            git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           else
             echo "No changes to commit"
           fi
