@@ -30,80 +30,120 @@
 
 ```bash
 
-# cnNetTool Start in 2024-11-14 05:09:05 +08:00
-140.82.112.25	alive.github.com
-140.82.121.6	api.github.com
-140.82.112.21	central.github.com
-140.82.121.10	codeload.github.com
-140.82.113.21	collector.github.com
-140.82.121.4	gist.github.com
-140.82.121.4	github.com
+# cnNetTool Start in 2024-11-14 22:07:51 +08:00
+140.82.113.26	alive.github.com
+20.205.243.168	api.github.com
+140.82.113.21	central.github.com
+20.205.243.165	codeload.github.com
+140.82.114.21	collector.github.com
+140.82.113.3	gist.github.com
+20.205.243.166	github.com
 140.82.112.17	github.community
-146.75.29.194	github.global.ssl.fastly.net
-52.217.236.49	github-com.s3.amazonaws.com
-52.216.170.59	github-production-release-asset-2e65be.s3.amazonaws.com
-140.82.113.26	live.github.com
+151.101.193.194	github.global.ssl.fastly.net
+3.5.29.79		github-com.s3.amazonaws.com
+52.217.67.108	github-production-release-asset-2e65be.s3.amazonaws.com
+140.82.113.25	live.github.com
 13.107.42.16	pipelines.actions.githubusercontent.com
+2620:1ec:21::16	pipelines.actions.githubusercontent.com
 185.199.110.154	github.githubassets.com
-185.199.109.153	github.io
-185.199.109.153	githubstatus.com
-185.199.109.153	assets-cdn.github.com
-185.199.111.133	avatars.githubusercontent.com
-185.199.111.133	avatars0.githubusercontent.com
-185.199.111.133	avatars1.githubusercontent.com
-185.199.111.133	avatars2.githubusercontent.com
-185.199.111.133	avatars3.githubusercontent.com
-185.199.111.133	avatars4.githubusercontent.com
-185.199.111.133	avatars5.githubusercontent.com
-185.199.111.133	camo.githubusercontent.com
-185.199.111.133	cloud.githubusercontent.com
-185.199.111.133	desktop.githubusercontent.com
-185.199.111.133	favicons.githubusercontent.com
-185.199.111.133	github.map.fastly.net
-185.199.111.133	media.githubusercontent.com
-185.199.111.133	objects.githubusercontent.com
-185.199.111.133	private-user-images.githubusercontent.com
-185.199.111.133	raw.githubusercontent.com
-185.199.111.133	user-images.githubusercontent.com
-3.171.76.69	tmdb.org
-3.171.76.69	api.tmdb.org
-3.171.76.69	files.tmdb.org
-3.171.85.89	themoviedb.org
-3.171.85.89	api.themoviedb.org
-3.171.85.89	www.themoviedb.org
-3.171.85.89	auth.themoviedb.org
-138.199.36.11	image.tmdb.org
-138.199.36.11	images.tmdb.org
-52.94.225.248	imdb.com
-18.67.61.135	www.imdb.com
+185.199.111.153	github.io
+2606:50c0:8003::153	github.io
+185.199.111.153	githubstatus.com
+2606:50c0:8003::153	githubstatus.com
+185.199.111.153	assets-cdn.github.com
+2606:50c0:8003::153	assets-cdn.github.com
+185.199.109.133	avatars.githubusercontent.com
+2606:50c0:8001::154	avatars.githubusercontent.com
+185.199.109.133	avatars0.githubusercontent.com
+2606:50c0:8001::154	avatars0.githubusercontent.com
+185.199.109.133	avatars1.githubusercontent.com
+2606:50c0:8001::154	avatars1.githubusercontent.com
+185.199.109.133	avatars2.githubusercontent.com
+2606:50c0:8001::154	avatars2.githubusercontent.com
+185.199.109.133	avatars3.githubusercontent.com
+2606:50c0:8001::154	avatars3.githubusercontent.com
+185.199.109.133	avatars4.githubusercontent.com
+2606:50c0:8001::154	avatars4.githubusercontent.com
+185.199.109.133	avatars5.githubusercontent.com
+2606:50c0:8001::154	avatars5.githubusercontent.com
+185.199.109.133	camo.githubusercontent.com
+2606:50c0:8001::154	camo.githubusercontent.com
+185.199.109.133	cloud.githubusercontent.com
+2606:50c0:8001::154	cloud.githubusercontent.com
+185.199.109.133	desktop.githubusercontent.com
+2606:50c0:8001::154	desktop.githubusercontent.com
+185.199.109.133	favicons.githubusercontent.com
+2606:50c0:8001::154	favicons.githubusercontent.com
+185.199.109.133	github.map.fastly.net
+2606:50c0:8001::154	github.map.fastly.net
+185.199.109.133	media.githubusercontent.com
+2606:50c0:8001::154	media.githubusercontent.com
+185.199.109.133	objects.githubusercontent.com
+2606:50c0:8001::154	objects.githubusercontent.com
+185.199.109.133	private-user-images.githubusercontent.com
+2606:50c0:8001::154	private-user-images.githubusercontent.com
+185.199.109.133	raw.githubusercontent.com
+2606:50c0:8001::154	raw.githubusercontent.com
+185.199.109.133	user-images.githubusercontent.com
+2606:50c0:8001::154	user-images.githubusercontent.com
+18.66.102.107	tmdb.org
+2600:9000:275d:9e00:5:da10:7440:93a1	tmdb.org
+18.66.102.107	api.tmdb.org
+2600:9000:275d:9e00:5:da10:7440:93a1	api.tmdb.org
+18.66.102.107	files.tmdb.org
+2600:9000:275d:9e00:5:da10:7440:93a1	files.tmdb.org
+3.160.150.81	themoviedb.org
+2600:9000:27e3:c00:e:5373:440:93a1	themoviedb.org
+3.160.150.81	api.themoviedb.org
+2600:9000:27e3:c00:e:5373:440:93a1	api.themoviedb.org
+3.160.150.81	www.themoviedb.org
+2600:9000:27e3:c00:e:5373:440:93a1	www.themoviedb.org
+3.160.150.81	auth.themoviedb.org
+2600:9000:27e3:c00:e:5373:440:93a1	auth.themoviedb.org
+185.93.1.243	image.tmdb.org
+2400:52e0:1a01::996:1	image.tmdb.org
+185.93.1.243	images.tmdb.org
+2400:52e0:1a01::996:1	images.tmdb.org
+52.94.237.74	imdb.com
+13.226.254.49	www.imdb.com
 52.94.237.74	secure.imdb.com
-18.67.61.135	s.media-imdb.com
-52.94.228.167	us.dd.imdb.com
-18.67.61.135	www.imdb.to
+13.226.254.49	s.media-imdb.com
+52.94.225.248	us.dd.imdb.com
+13.226.254.49	www.imdb.to
 52.94.225.248	imdb-webservice.amazon.com
-44.215.137.99	origin-www.imdb.com
-146.75.29.16	m.media-amazon.com
-18.154.229.206	Images-na.ssl-images-amazon.com
-18.160.6.41	images-fe.ssl-images-amazon.com
-146.75.29.16	images-eu.ssl-images-amazon.com
-146.75.29.16	ia.media-imdb.com
-146.75.29.16	f.media-amazon.com
-18.67.76.6		imdb-video.media-imdb.com
-18.67.66.59	dqpnq362acqdi.cloudfront.net
-172.253.122.102	translate.google.com
-172.253.122.102	translate.googleapis.com
-172.253.122.102	translate-pa.googleapis.com
-52.85.151.62	plugins.jetbrains.com
-52.85.151.62	download.jetbrains.com
-52.85.151.62	cache-redirector.jetbrains.com
+98.82.155.134	origin-www.imdb.com
+3.166.233.221	m.media-amazon.com
+2600:9000:274f:b200:1d:d7f6:39d4:e6e1	m.media-amazon.com
+151.101.129.16	Images-na.ssl-images-amazon.com
+2600:9000:274f:8a00:1d:d7f6:39d4:e6e1	Images-na.ssl-images-amazon.com
+3.166.233.221	images-fe.ssl-images-amazon.com
+2600:9000:274f:b200:1d:d7f6:39d4:e6e1	images-fe.ssl-images-amazon.com
+3.166.233.221	images-eu.ssl-images-amazon.com
+2600:9000:274f:3000:1d:d7f6:39d4:e6e1	images-eu.ssl-images-amazon.com
+3.166.233.221	ia.media-imdb.com
+2600:9000:274f:b200:1d:d7f6:39d4:e6e1	ia.media-imdb.com
+151.101.89.16	f.media-amazon.com
+2a04:4e42:15::272	f.media-amazon.com
+18.238.192.108	imdb-video.media-imdb.com
+13.226.220.89	dqpnq362acqdi.cloudfront.net
+2600:9000:223e:6a00:5:ce70:a180:21	dqpnq362acqdi.cloudfront.net
+64.233.189.148	translate.google.com
+64.233.189.148	translate.googleapis.com
+64.233.189.148	translate-pa.googleapis.com
+3.166.228.13	plugins.jetbrains.com
+2600:9000:2365:f400:12:7c44:15c0:93a1	plugins.jetbrains.com
+3.166.228.13	download.jetbrains.com
+2600:9000:2365:f400:12:7c44:15c0:93a1	download.jetbrains.com
+3.166.228.13	cache-redirector.jetbrains.com
+2600:9000:2365:f400:12:7c44:15c0:93a1	cache-redirector.jetbrains.com
 
-# Update time: 2024-11-14 05:09:05 +08:00
+# Update time: 2024-11-14 22:07:51 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-该内容会自动定时更新， 数据更新时间：2024-11-14 05:09:05 +08:00
+该内容会自动定时更新， 数据更新时间：2024-11-14 22:07:51 +08:00
 
 #### 1.2.2 修改 hosts 文件
 
