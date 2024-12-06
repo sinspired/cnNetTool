@@ -123,7 +123,7 @@ class Utils:
             shutil.copy(hosts_file_path, backup_path)
             rprint(
                 f"\n[blue]已备份 [underline]{
-                    hosts_file_path}[/underline] 到 [underline]{backup_path}[/underline][/blue]"
+                hosts_file_path}[/underline] 到 [underline]{backup_path}[/underline][/blue]"
             )
 
     @staticmethod
