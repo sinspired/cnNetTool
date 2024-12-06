@@ -7,7 +7,7 @@ on:
       - 'setHosts_Classic.py'
       - 'requirements.txt'
     branches:
-      - 'main'
+      - 'master'
   schedule:
     - cron: '0 */4 * * *'
   workflow_dispatch:
@@ -42,7 +42,7 @@ jobs:
       
       - name: Run hosts update script1
         run: |
-          sudo python3 setHosts.py
+          sudo python3 setHosts_Classic.py
       
       # 提交并推送更新（仅在文件变更时）
       - name: Commit and push changes
