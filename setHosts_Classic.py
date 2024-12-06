@@ -261,7 +261,7 @@ class Utils:
         padding_needed = max(0, padding_needed)
 
         # 构建最终的格式化字符串
-        formatted_str = f"\n[bold white on bright_black]正在处理第 [green]{
+        formatted_str = f"\n[bold white on bright_black]正在处理第 [green]{ \
             i}[/green] 组域名： {group_name.upper()}{' ' * padding_needed}[/bold white on bright_black]"
 
         return formatted_str
