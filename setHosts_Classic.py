@@ -122,8 +122,8 @@ class Utils:
             backup_path = f"{hosts_file_path}.bak"
             shutil.copy(hosts_file_path, backup_path)
             rprint(
-                f"\n[blue]已备份 [underline]{
-                hosts_file_path}[/underline] 到 [underline]{backup_path}[/underline][/blue]"
+                f"\n[blue]已备份 [underline]{\
+                    hosts_file_path}[/underline] 到 [underline]{backup_path}[/underline][/blue]"
             )
 
     @staticmethod
