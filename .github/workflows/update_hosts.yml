@@ -41,8 +41,8 @@ jobs:
           sudo pip install -r requirements.txt
       
       - name: Run hosts update script1
-        run: |
-          sudo python3 seHosts.py
+        run: | 
+          sudo python3 setHosts.py
       
       # 提交并推送更新（仅在文件变更时）
       - name: Commit and push changes
