@@ -355,7 +355,7 @@ class DomainResolver:
 
             ips.update(ipv4_ips + ipv6_ips)
             logging.debug(
-                f"成功通过缓存文件解析 {domain}, 发现 {len(
+                f"成功通过缓存文件解析 {domain}, 发现 {len( \
                     ipv4_ips)+len(ipv6_ips)} 个 DNS 主机:\n{ipv4_ips}\n{ipv6_ips if ipv6_ips else ''}\n"
             )
         else:
