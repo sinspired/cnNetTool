@@ -218,7 +218,7 @@ class Utils:
                 len(main_text) - len(completion_mark) - 6
             fill_count = max(0, fill_count)
 
-            filled_text = f"{main_text}{
+            filled_text = f"{main_text}{ \
                 fill_char * fill_count}{completion_mark}"
             return f"[blue on green]{filled_text}[/blue on green]"
         else:
