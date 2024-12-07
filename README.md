@@ -34,27 +34,27 @@
 
 ```bash
 
-# cnNetTool Start in 2024-12-07 16:13:41 +08:00
-104.244.43.52	tmdb.org
-104.244.43.52	api.tmdb.org
-104.244.43.52	files.tmdb.org
-104.244.43.52	themoviedb.org
-104.244.43.52	api.themoviedb.org
-104.244.43.52	www.themoviedb.org
-104.244.43.52	auth.themoviedb.org
-143.244.50.86	image.tmdb.org
-143.244.50.86	images.tmdb.org
-142.251.163.91	translate.google.com
-142.251.163.91	translate.googleapis.com
-142.251.163.91	translate-pa.googleapis.com
+# cnNetTool Start in 2024-12-07 16:15:24 +08:00
+104.244.43.128	tmdb.org
+104.244.43.128	api.tmdb.org
+104.244.43.128	files.tmdb.org
+104.244.43.128	themoviedb.org
+104.244.43.128	api.themoviedb.org
+104.244.43.128	www.themoviedb.org
+104.244.43.128	auth.themoviedb.org
+143.244.50.88	image.tmdb.org
+143.244.50.88	images.tmdb.org
+172.253.62.88	translate.google.com
+172.253.62.88	translate.googleapis.com
+172.253.62.88	translate-pa.googleapis.com
 
-# Update time: 2024-12-07 16:13:41 +08:00
+# Update time: 2024-12-07 16:15:24 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2024-12-07 16:13:41 +08:00
+以上内容会自动定时更新， 数据更新时间：2024-12-07 16:15:24 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
