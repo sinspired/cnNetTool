@@ -82,13 +82,12 @@ def parse_args():
         help="打印运行信息",
     )
     parser.add_argument(
-    "-n",
-    "--NotUseDnsServers",
-    action="store_true",
-    help="不使用DNS服务器解析（避免GitHub等被dns污染的网站获取错误地址)",
+        "-n",
+        "--NotUseDnsServers",
+        action="store_true",
+        help="不使用DNS服务器解析（避免GitHub等被dns污染的网站获取错误地址)",
     )
 
-    
     return parser.parse_args()
 
 
