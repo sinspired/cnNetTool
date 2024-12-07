@@ -42,12 +42,11 @@ jobs:
 
       - name: Check files using the black formatter
         uses: datadog/action-py-black-formatter@v2.1
-        id: action_black
-      - name: Annotate diff changes using reviewdog
-        if: steps.action_black.outputs.is_formatted == 'true'
-        uses: reviewdog/action-suggester@v1
         with:
-          tool_name: blackfmt
+          check_mode: "true"
+          print_diff_mode: "true"
+
+ 
 
 
       - name: Run hosts update script1
