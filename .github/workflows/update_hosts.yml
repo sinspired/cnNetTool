@@ -40,7 +40,7 @@ jobs:
           python -m pip install --upgrade pip
           sudo pip install -r requirements.txt
       
-          pip install black
+          sudo pip install black
       - name: Check code format
         run: ｜
           black --check .
