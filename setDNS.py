@@ -372,12 +372,12 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
 
     elif system == "Linux":
         with open("/etc/resolv.conf", "w") as f:
-            for dns in ipv4_dns_list:
-                logger.debug(f"添加IPv4 DNS到 /etc/resolv.conf: {dns}")
-                f.write(f"nameserver {dns}\n")
-            for dns in ipv6_dns_list:
-                logger.debug(f"添加IPv6 DNS到 /etc/resolv.conf: {dns}")
-                f.write(f"nameserver {dns}\n")
+            for dns_item in ipv4_dns_list:
+                logger.debug(f"添加IPv4 DNS到 /etc/resolv.conf: {dns_item}")
+                f.write(f"nameserver {dns_item}\n")
+            for dns_item in ipv6_dns_list:
+                logger.debug(f"添加IPv6 DNS到 /etc/resolv.conf: {dns_item}")
+                f.write(f"nameserver {dns_item}\n")
     elif system == "Darwin":  # macOS
         all_dns = ipv4_dns_list + ipv6_dns_list
         dns_string = " ".join(all_dns)
