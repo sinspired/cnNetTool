@@ -353,7 +353,7 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
                             ],
                             check=True,
                         )
-                        for dns in ipv6_dns_list[1:]:
+                        for dns_item in ipv6_dns_list[1:]:
                             subprocess.run(
                                 [
                                     "netsh",
@@ -362,7 +362,7 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
                                     "add",
                                     "dns",
                                     interface,
-                                    dns,
+                                    dns_item,
                                     "index=2",
                                 ],
                                 check=True,
