@@ -335,8 +335,8 @@ class DomainResolver:
         ips = set()
 
         # 1. 首先通过常规DNS服务器解析
-        #dns_ips = await self._resolve_via_dns(domain, args.dns_resolve_policy)
-        #ips.update(dns_ips)
+        # dns_ips = await self._resolve_via_dns(domain, args.dns_resolve_policy)
+        # ips.update(dns_ips)
 
         dns_resolve_end_time = datetime.now()
 
