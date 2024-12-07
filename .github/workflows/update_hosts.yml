@@ -34,9 +34,10 @@ jobs:
 
       - name: Run and fix formatting
         run: |
-          black --line-length 88 .
+          #black --line-length 88 .
           black --line-length 88 --no-cache setDNS.py
           isort .
+          echo “继续”
           flake8 --max-line-length=88 .
 
       # 提交修复的代码
