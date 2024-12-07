@@ -258,8 +258,7 @@ class Utils:
         padding_needed = max(0, padding_needed)
 
         # 构建最终的格式化字符串
-        formatted_str = f"\n[bold white on bright_black]正在处理第 [green]{ \
-            i}[/green] 组域名： {group_name.upper()}{' ' * padding_needed}[/bold white on bright_black]"
+        formatted_str = f"\n[bold white on bright_black]正在处理第 [green]{i}[/green] 组域名： {group_name.upper()}{' ' * padding_needed}[/bold white on bright_black]"
 
         return formatted_str
 
@@ -352,8 +351,7 @@ class DomainResolver:
 
             ips.update(ipv4_ips + ipv6_ips)
             logging.debug(
-                f"成功通过缓存文件解析 {domain}, 发现 {len( \
-                    ipv4_ips)+len(ipv6_ips)} 个 DNS 主机:\n{ipv4_ips}\n{ipv6_ips if ipv6_ips else ''}\n"
+                f"成功通过缓存文件解析 {domain}, 发现 {len(ipv4_ips)+len(ipv6_ips)} 个 DNS 主机:\n{ipv4_ips}\n{ipv6_ips if ipv6_ips else ''}\n"
             )
         else:
             ipaddress_ips = await self._resolve_via_ipaddress(domain)
@@ -362,8 +360,7 @@ class DomainResolver:
 
         if ips:
             logging.debug(
-                f"成功通过 DNS服务器 和 DNS记录 解析 {domain}, 发现 { \
-                    len(ips)} 个 唯一 DNS 主机\n{ips}\n"
+                f"成功通过 DNS服务器 和 DNS记录 解析 {domain}, 发现 {len(ips)} 个 唯一 DNS 主机\n{ips}\n"
             )
         else:
             logging.debug(f"警告: 无法解析 {domain}")
@@ -416,8 +413,7 @@ class DomainResolver:
 
                 if ips:
                     logging.debug(
-                        f"成功使用 {dns_provider} : {dns_server} 解析 { \
-                            domain}，共 {len(ips)} 个主机: {ips}"
+                        f"成功使用 {dns_provider} : {dns_server} 解析 {domain}，共 {len(ips)} 个主机: {ips}"
                     )
 
                 return ips
@@ -449,8 +445,7 @@ class DomainResolver:
         ips = set(ip for result in results for ip in result if ip)
         if ips:
             logging.debug(
-                f"成功使用多个 DNS 服务器解析 {domain}，共 { \
-                          len(ips)} 个主机:\n{ips}\n"
+                f"成功使用多个 DNS 服务器解析 {domain}，共 {len(ips)} 个主机:\n{ips}\n"
             )
         # input("按任意键继续")
         return ips
@@ -479,8 +474,7 @@ class DomainResolver:
                             }
                             self.save_hosts_cache()
                             logging.warning(
-                                f"ipaddress.com {tries} 次尝试后未解析到 { \
-                                    domain} 的 DNS_records 地址，"
+                                f"ipaddress.com {tries} 次尝试后未解析到 {domain} 的 DNS_records 地址，"
                                 f"已写入空地址到缓存以免无谓消耗网络资源"
                             )
                             # print(f"通过 DNS_records 解析 {
@@ -566,8 +560,7 @@ class DomainResolver:
                     }
                     self.save_hosts_cache()
                     logging.debug(
-                        f"通过 ipaddress.com 成功解析 { \
-                                  domain} 并更新 DNS_records 缓存"
+                        f"通过 ipaddress.com 成功解析 {domain} 并更新 DNS_records 缓存"
                     )
                     logging.debug(f"DNS_records：\n {ips}")
                 else:
@@ -579,8 +572,7 @@ class DomainResolver:
                     }
                     self.save_hosts_cache()
                     logging.warning(
-                        f"ipaddress.com 未解析到 { \
-                        domain} 的 DNS_records 地址,已写入空地址到缓存以免无谓消耗网络资源"
+                        f"ipaddress.com 未解析到 {domain} 的 DNS_records 地址,已写入空地址到缓存以免无谓消耗网络资源"
                     )
         except Exception as e:
             logging.error(f"通过DNS_records解析 {domain} 失败! {e}")
@@ -609,8 +601,7 @@ class LatencyTester:
         all_ips = list(file_ips)
         # start_time = datetime.now()
         rprint(
-            f"[bright_black]- 获取到 [bold bright_green]{ \
-                len(all_ips)}[/bold bright_green] 个唯一IP地址[/bright_black]"
+            f"[bright_black]- 获取到 [bold bright_green]{len(all_ips)}[/bold bright_green] 个唯一IP地址[/bright_black]"
         )
         if all_ips:
             rprint(f"[bright_black]- 检测主机延迟...[/bright_black]")
@@ -630,8 +621,7 @@ class LatencyTester:
             if valid_latency_results:
                 if len(valid_latency_results) < len(all_ips):
                     rprint(
-                        f"[bright_black]- 检测到 [bold bright_green]{ \
-                            len(valid_latency_results)}[/bold bright_green] 个有效IP地址[/bright_black]"
+                        f"[bright_black]- 检测到 [bold bright_green]{len(valid_latency_results)}[/bold bright_green] 个有效IP地址[/bright_black]"
                     )
                 valid_latency_ips = [
                     result
@@ -657,8 +647,7 @@ class LatencyTester:
 
             if len(valid_latency_ips) < len(valid_latency_results):
                 rprint(
-                    f"[bright_black]- 检测到 [bold bright_green]{ \
-                        len(valid_latency_ips)}[/bold bright_green] 个延迟小于 {latency_limit}ms 的有效IP地址[/bright_black]"
+                    f"[bright_black]- 检测到 [bold bright_green]{len(valid_latency_ips)}[/bold bright_green] 个延迟小于 {latency_limit}ms 的有效IP地址[/bright_black]"
                 )
 
             ipv4_results = [r for r in valid_latency_ips if not Utils.is_ipv6(r[0])]
@@ -807,21 +796,18 @@ class LatencyTester:
                     )
                     if not_after < datetime.now():
                         logging.debug(
-                            f"{domain} ({ip}) { \
-                                      latency:.0f}ms: 证书已过期"
+                            f"{domain} ({ip}) {latency:.0f}ms: 证书已过期"
                         )
                         return (ip, latency, False)
 
                     logging.debug(
-                        f"{domain} ({ip}) { \
-                        latency:.0f}ms: SSL证书有效，截止日期为 {not_after}"
+                        f"{domain} ({ip}) {latency:.0f}ms: SSL证书有效，截止日期为 {not_after}"
                     )
                     return (ip, latency, True)
 
         except ConnectionError as e:
             logging.debug(
-                f"{domain} ({ip}) { \
-                          latency:.0f}ms: 连接被强迫关闭，ip有效 - {e}"
+                f"{domain} ({ip}) {latency:.0f}ms: 连接被强迫关闭，ip有效 - {e}"
             )
             return (ip, latency, True)
         except Exception as e:
@@ -849,21 +835,18 @@ class LatencyTester:
                         )
                         if not_after < datetime.now():
                             logging.debug(
-                                f"{domain} ({ip}) { \
-                                          latency:.0f}ms: 证书已过期"
+                                f"{domain} ({ip}) {latency:.0f}ms: 证书已过期"
                             )
                             continue  # 检查下一个 domain
 
                         logging.debug(
-                            f"{domain} ({ip}) { \
-                            latency:.0f}ms: SSL证书有效，截止日期为 {not_after}"
+                            f"{domain} ({ip}) {latency:.0f}ms: SSL证书有效，截止日期为 {not_after}"
                         )
                         return (ip, latency, True)  # 任意一个验证通过即返回成功
 
             except ConnectionError as e:
                 logging.debug(
-                    f"{domain} ({ip}) { \
-                    latency:.0f}ms: 连接被强迫关闭，ip有效 - {e}"
+                    f"{domain} ({ip}) {latency:.0f}ms: 连接被强迫关闭，ip有效 - {e}"
                 )
                 return (ip, latency, True)
             except Exception as e:
@@ -914,12 +897,11 @@ class LatencyTester:
         打印结果的方法
         """
         rprint(
-            f"[bold yellow]最快的 DNS主机 IP（优先选择 IPv6） 丨   延迟 < { \
-               latency_limit:.0f}ms ：[/bold yellow]"
+            f"[bold yellow]最快的 DNS主机 IP（优先选择 IPv6） 丨   延迟 < {latency_limit:.0f}ms ：[/bold yellow]"
         )
         for ip, time in best_hosts:
             rprint(
-                f"  [green]{ \
+                f"  [green]{
                    ip}[/green]    [bright_black]{time:.2f} ms[/bright_black]"
             )
 
@@ -1051,8 +1033,7 @@ class HostsManager:
         with open("hosts", "w") as f:
             f.write("\n".join(save_hosts_content))
             rprint(
-                f"\n[blue]已生成 hosts 文件,位于: [underline]hosts[/underline][/blue] (共 { \
-                    len(new_entries)} 个条目)"
+                f"\n[blue]已生成 hosts 文件,位于: [underline]hosts[/underline][/blue] (共 {len(new_entries)} 个条目)"
             )
 
         if not getattr(sys, "frozen", False):
@@ -1094,8 +1075,7 @@ class HostsUpdater:
                     all_ips = set()
                     if default_ips:
                         rprint(
-                            f"[bright_black]- 读取到 [bold bright_green]{ \
-                                len(default_ips)}[/bold bright_green] 个预设IP地址[/bright_black]"
+                            f"[bright_black]- 读取到 [bold bright_green]{len(default_ips)}[/bold bright_green] 个预设IP地址[/bright_black]"
                         )
                         all_ips.update(default_ips)
 
@@ -1123,8 +1103,7 @@ class HostsUpdater:
                 all_ips = set()
                 if default_ips:
                     rprint(
-                        f"[bright_black]- 读取到 [bold bright_green]{ \
-                            len(default_ips)}[/bold bright_green] 个预设IP地址[/bright_black]"
+                        f"[bright_black]- 读取到 [bold bright_green]{len(default_ips)}[/bold bright_green] 个预设IP地址[/bright_black]"
                     )
                     all_ips.update(default_ips)
 
