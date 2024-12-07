@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-    autoyapf:
+  autoyapf:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
