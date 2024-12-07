@@ -1,30 +1,26 @@
+import argparse
+import asyncio
+import ctypes
+import json
+import logging
 import os
+import platform
+import re
+import shutil
+import socket
 import ssl
 import sys
-from pathlib import Path
-import dns.resolver
-import json
-import shutil
-import asyncio
-import platform
-import logging
-import argparse
-import aiohttp
-import socket
-from enum import Enum
 from datetime import datetime, timedelta, timezone
-from typing import List, Set, Optional, Dict, Tuple
-import ctypes
-import re
+from enum import Enum
 from functools import wraps
-from rich import print as rprint
-from rich.progress import (
-    Progress,
-    BarColumn,
-    TaskID,
-    TimeRemainingColumn,
-)
 from math import floor
+from pathlib import Path
+from typing import Dict, List, Optional, Set, Tuple
+
+import aiohttp
+import dns.resolver
+from rich import print as rprint
+from rich.progress import BarColumn, Progress, TaskID, TimeRemainingColumn
 
 # -------------------- 常量设置 -------------------- #
 RESOLVER_TIMEOUT = 1  # DNS 解析超时时间 秒

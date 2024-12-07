@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import argparse
 import ctypes
+import logging
 import os
+import platform
+import statistics
+import subprocess
 import sys
 import threading
-import dns.resolver
-import platform
-import subprocess
-import logging
-import argparse
 import time
-import statistics
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import dns.resolver
 from prettytable import PrettyTable
 
 # 设置日志记录
@@ -453,8 +454,7 @@ def print_recommended_dns_table(dns_list: list, ip_version: str, available_dns: 
         if dns:
             # 在best_dns列表中查找正确的服务器信息
             server_info = next(
-                (info for server,
-                 info in available_dns[ip_version] if server == dns),
+                (info for server, info in available_dns[ip_version] if server == dns),
                 None,
             )
             if server_info:
@@ -565,8 +565,7 @@ def main():
             print_domain_resolutions(domain_resolutions, dns_performance)
 
         # 防止 best_dns_num 数值超过数组长度
-        num_servers = max(
-            len(available_dns["ipv4"]), len(available_dns["ipv6"]))
+        num_servers = max(len(available_dns["ipv4"]), len(available_dns["ipv6"]))
         if args.best_dns_num > num_servers:
             args.best_dns_num = num_servers
 
