@@ -104,7 +104,8 @@ async def compare_dns_results(domain: str, servers: List[str]):
         if not server_info:
             results.append({'server': server_name, 'error': 'Invalid server'})
             continue
-        
+            
+            
         if server_info['type'] == 'udp':
             result = perform_udp_query(domain, server_info['server'], server_info['port'])
         elif server_info['type'] == 'doh':
@@ -126,5 +127,5 @@ async def main():
 
 
 # 运行主函数
-if __name__ == "__main__":
+if __name__=="__main__":
     asyncio.run(main())
