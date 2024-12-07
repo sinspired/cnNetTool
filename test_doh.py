@@ -111,7 +111,7 @@ async def compare_dns_results(domain: str, servers: List[str]):
 
 # 调用函数并输出结果
 async def main():
-    domain = "example.com"
+    domain = "translate.google.com"
     servers_to_test = ['google', 'cloudflare', 'quad9', 'aliyun', 'cloudflare_doh', '360', 'google_doh']
     results = await compare_dns_results(domain, servers_to_test)
     
