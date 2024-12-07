@@ -318,7 +318,7 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
                             ],
                             check=True,
                         )
-                        for dns in ipv4_dns_list[1:]:
+                        for dns_item in ipv4_dns_list[1:]:
                             subprocess.run(
                                 [
                                     "netsh",
@@ -327,7 +327,7 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
                                     "add",
                                     "dns",
                                     interface,
-                                    dns,
+                                    dns_item,
                                     "index=2",
                                 ],
                                 check=True,
@@ -450,8 +450,8 @@ def print_recommended_dns_table(dns_list: list, ip_version: str, available_dns: 
     table = PrettyTable()
     table.title = f"推荐的最佳{ip_version.upper()} DNS服务器"
     table.field_names = ["DNS", "提供商", "区域", "成功率", "平均延迟(ms)"]
-    for dns in dns_list:
-        if dns:
+    for dns_item in dns_list:
+        if dns_item:
             # 在best_dns列表中查找正确的服务器信息
             server_info = next(
                 (info for server, info in available_dns[ip_version] if server == dns),
@@ -460,7 +460,7 @@ def print_recommended_dns_table(dns_list: list, ip_version: str, available_dns: 
             if server_info:
                 table.add_row(
                     [
-                        dns,
+                        dns_item,
                         server_info["provider"],
                         server_info["region"],
                         f"{server_info['success_rate']:.2%}",
@@ -473,7 +473,7 @@ def print_recommended_dns_table(dns_list: list, ip_version: str, available_dns: 
 
 def print_available_dns(available_dns, best_dns_num):
     print()
-    print(f"可用DNS服务器:")
+    print("可用DNS服务器:")
 
     for ip_version in ["ipv4", "ipv6"]:
         if available_dns[ip_version]:
