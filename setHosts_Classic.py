@@ -670,7 +670,7 @@ class LatencyTester:
 
                 for i in range(0, total_results, batch_size):
                     min_len = min(total_results, batch_size)
-                    batch = valid_latency_ips[i: i + min_len]
+                    batch = valid_latency_ips[i : i + min_len]
                     ssl_verification_tasks = [
                         loop.run_in_executor(
                             executor,
@@ -1843,9 +1843,9 @@ class Config:
 
             # 获取用户目录下的 .setHosts，以防止没有写入权限
             dns_cache_dir = (
-                Path(os.getenv("USERPROFILE", os.getenv("HOME")))/
-                ".setHosts"/
-                "dns_cache"
+                Path(os.getenv("USERPROFILE", os.getenv("HOME")))
+                / ".setHosts"
+                / "dns_cache"
             )
         else:
             # 脚本运行时路径
