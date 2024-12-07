@@ -23,7 +23,8 @@ import dns.resolver
 import httpx
 import wcwidth
 from rich import print as rprint
-#from rich.progress import Progress, SpinnerColumn, TextColumn
+
+# from rich.progress import Progress, SpinnerColumn, TextColumn
 
 # -------------------- 常量设置 -------------------- #
 RESOLVER_TIMEOUT = 0.1  # DNS 解析超时时间 秒
@@ -952,9 +953,9 @@ class HostsManager:
 
             # 非标记块内容保留
             if (
-                not skip and 
-                (line.startswith("#") or not line) and 
-                not any(tag in line for tag in skip_tags)
+                not skip
+                and (line.startswith("#") or not line)
+                and not any(tag in line for tag in skip_tags)
             ):
                 new_content.append(line)
                 continue
