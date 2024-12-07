@@ -39,16 +39,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           sudo pip install -r requirements.txt
-      
-      - name: Install pycodestyle
-        run: pip install pycodestyle
-      - name: Run pycodestyle
-        id: pycodestyle
-        run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '\.py$' | xargs pycodestyle --statistics > pep8_issues.txt || true
-      - name: Read pycodestyle output
-        id: read_pep8_issues
-        run: echo "::set-output name=pep8_issues::$(cat pep8_issues.txt)"
+
+      - name: black-format
+        uses: datadog/action-py-black-formatter@v2.1
+        with:
+          check_mode: "true"
+
 
       - name: Run hosts update script1
         run: | 
