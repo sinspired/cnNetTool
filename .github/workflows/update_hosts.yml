@@ -71,10 +71,10 @@ jobs:
         run: |
           python -m pip install pip
           sudo pip install -r requirements.txt
-          sudo pip install requests
+          pip install requests
       - name: Test FetchDNS
         run: |
-          sudo python fetch_dns.py
+          python fetch_dns.py
 
       - name: Run hosts update script1
         run: | 
