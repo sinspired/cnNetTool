@@ -3,7 +3,6 @@ name: Update hosts
 on:
   push:
     paths:
-      - 'update_hosts.yml'
       - 'setHosts.py'
       - 'setHosts_Classic.py'
       - 'requirements.txt'
@@ -31,12 +30,12 @@ jobs:
 
       - name: Install formatting tools
         run: |
-          pip install black flake8 isort
+          pip install --upgrade black flake8 isort
 
       - name: Run and fix formatting
         run: |
           #black --line-length 88 .
-          black --line-length 88 --force-exclude setDNS.py
+          black --line-length 88 setDNS.py
           isort .
           echo “继续”
           flake8 --max-line-length=88 .
@@ -72,7 +71,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install pip
           sudo pip install -r requirements.txt
 
       - name: Run hosts update script1
