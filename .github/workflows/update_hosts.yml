@@ -36,7 +36,7 @@ jobs:
         run: |
           black .
           isort .
-          flake8 --ignore=E501 .
+          flake8 --ignore=E501,E503 .
 
       # 提交修复的代码
       - name: Commit and push fixes
