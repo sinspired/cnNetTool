@@ -80,6 +80,6 @@ class DNSResolver:
 # 测试解析域名
 if __name__ == "__main__":
     resolver = DNSResolver()
-    domain = "alive.github.com"
+    domain = "translate.google.com"
     result = resolver.resolve_via_ipaddress(domain)
     print(f"{domain} 的解析结果: {result}")
