@@ -459,7 +459,7 @@ class DomainResolver:
                 for attempt in range(tries):
                     try:
                         return await func(*args, **kwargs)
-                    except Exception as e:
+                    except Exception:
                         if attempt < tries - 1:
                             print(f"第 {attempt + 2} 次尝试:")
                             # logging.debug(f"通过DNS_records解析 {args[1]},第 {attempt + 2} 次尝试:")
