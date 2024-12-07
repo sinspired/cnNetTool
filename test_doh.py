@@ -46,6 +46,7 @@ DNS_SERVERS = {
     }
 }
 
+
 # 通过 UDP 查询 DNS
 def perform_udp_query(domain: str, server: str, port: int = 53) -> dict:
     try:
@@ -56,6 +57,7 @@ def perform_udp_query(domain: str, server: str, port: int = 53) -> dict:
         return {'server': server, 'result': answers}
     except Exception as e:
         return {'server': server, 'error': str(e)}
+
 
 # 通过 DoH 查询 DNS
 async def perform_doh_query(domain: str, server: str) -> dict:
@@ -71,6 +73,7 @@ async def perform_doh_query(domain: str, server: str) -> dict:
                 return {'server': server, 'error': f"HTTP Error: {response.status_code}"}
     except Exception as e:
         return {'server': server, 'error': str(e)}
+
 
 # 通过 DoT 查询 DNS
 async def perform_dot_query(domain: str, server: str) -> dict:
@@ -92,6 +95,7 @@ async def perform_dot_query(domain: str, server: str) -> dict:
     except Exception as e:
         return {'server': server, 'error': str(e)}
 
+
 # 执行查询并对比结果
 async def compare_dns_results(domain: str, servers: List[str]):
     results = []
@@ -110,6 +114,7 @@ async def compare_dns_results(domain: str, servers: List[str]):
         results.append(result)
     return results
 
+
 # 调用函数并输出结果
 async def main():
     domain = "translate.google.com"
@@ -118,6 +123,7 @@ async def main():
     
     for result in results:
         print(result)
+
 
 # 运行主函数
 if __name__ == "__main__":
