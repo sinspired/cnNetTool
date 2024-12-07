@@ -74,7 +74,7 @@ jobs:
           sudo pip install requests
       - name: Test FetchDNS
         run: |
-          sudo py fetch_dns.py
+          sudo python fetch_dns.py
 
       - name: Run hosts update script1
         run: | 
