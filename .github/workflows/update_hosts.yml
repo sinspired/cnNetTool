@@ -71,7 +71,7 @@ jobs:
         run: |
           python -m pip install pip
           sudo pip install -r requirements.txt
-          sudo pip install request
+          sudo pip install requests
       - name: Test FetchDNS
         run: |
           sudo py fetch_dns.py
