@@ -1,10 +1,11 @@
-import httpx
-import dns.query
-import dns.message
-import dns.rdatatype
 import asyncio
 import ssl
 from typing import List
+
+import dns.message
+import dns.query
+import dns.rdatatype
+import httpx
 
 # 常见的 DNS 服务列表，包括全球和中国的服务
 DNS_SERVERS = {
