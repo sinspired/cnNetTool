@@ -670,7 +670,7 @@ class LatencyTester:
 
                 for i in range(0, total_results, batch_size):
                     min_len = min(total_results, batch_size)
-                    batch = valid_latency_ips[i : i + min_len]
+                    batch = valid_latency_ips[i: i + min_len]
                     ssl_verification_tasks = [
                         loop.run_in_executor(
                             executor,
