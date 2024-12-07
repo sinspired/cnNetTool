@@ -953,9 +953,9 @@ class HostsManager:
 
             # 非标记块内容保留
             if (
-                not skip and
-                (line.startswith("#") or not line) and
-                not any(tag in line for tag in skip_tags)
+                not skip
+                and (line.startswith("#") or not line)
+                and not any(tag in line for tag in skip_tags)
             ):
                 new_content.append(line)
                 continue
