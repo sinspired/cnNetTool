@@ -75,6 +75,7 @@ jobs:
       - name: Test FetchDNS
         run: |
           python fetch_dns.py
+          python test_doh.py
 
       - name: Run hosts update script1
         run: | 
