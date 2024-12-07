@@ -152,7 +152,7 @@ class Utils:
                 output_fb.write(readme_content)
 
             rprint(
-                f"[blue]已更新 README.md 文件,位于: [underline]README.md[/underline][/blue]\n"
+                "[blue]已更新 README.md 文件,位于: [underline]README.md[/underline][/blue]\n"
             )
 
         except FileNotFoundError as e:
@@ -699,7 +699,7 @@ class HostsManager:
             .replace("+0800", "+08:00")
         )
 
-        rprint(f"\n[bold yellow]正在更新 hosts 文件...[/bold yellow]")
+        rprint("\n[bold yellow]正在更新 hosts 文件...[/bold yellow]")
 
         save_hosts_content = []  # 提取新内容文本
 
@@ -966,7 +966,6 @@ class HostsUpdater:
 
     async def update_hosts(self):
         """主更新函数，支持并发进度显示"""
-        cache_valid = self.resolver._is_dns_cache_valid()
 
         with self.progress:
             # 并发处理所有组
