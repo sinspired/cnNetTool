@@ -43,7 +43,7 @@ jobs:
           sudo pip install black
       - name: Check code format
         run: ｜
-          black --check .
+          sudo black --check .
 
       - name: Run hosts update script1
         run: | 
