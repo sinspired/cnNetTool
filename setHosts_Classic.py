@@ -953,9 +953,9 @@ class HostsManager:
 
             # 非标记块内容保留
             if (
-                not skip
-                and (line.startswith("#") or not line)
-                and not any(tag in line for tag in skip_tags)
+                not skip and
+                (line.startswith("#") or not line) and
+                not any(tag in line for tag in skip_tags)
             ):
                 new_content.append(line)
                 continue
@@ -974,7 +974,7 @@ class HostsManager:
             .replace("+0800", "+08:00")
         )
 
-        rprint(f"\n[bold yellow]正在更新 hosts 文件...[/bold yellow]")
+        rprint("\n[bold yellow]正在更新 hosts 文件...[/bold yellow]")
 
         save_hosts_content = []  # 提取新内容文本
 
