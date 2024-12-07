@@ -16,6 +16,16 @@ permissions:
   contents: write
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        linter: [flake8, pylint, ruff, mypy, pytype, pyright, fixit, pyre]
+    steps:
+      - uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: ${{ matrix.linter }}
+
   update-hosts:
     runs-on: ubuntu-latest
     
@@ -39,15 +49,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           sudo pip install -r requirements.txt
-
-      - name: Check files using the black formatter
-        uses: datadog/action-py-black-formatter@v2.1
-        with:
-          check_mode: "true"
-          print_diff_mode: "true"
-
- 
-
 
       - name: Run hosts update script1
         run: | 
