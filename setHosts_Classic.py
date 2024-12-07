@@ -162,7 +162,7 @@ class Utils:
                 output_fb.write(readme_content)
 
             rprint(
-                f"[blue]已更新 README.md 文件,位于: [underline]README.md[/underline][/blue]\n"
+                "[blue]已更新 README.md 文件,位于: [underline]README.md[/underline][/blue]\n"
             )
 
         except FileNotFoundError as e:
@@ -351,7 +351,8 @@ class DomainResolver:
 
             ips.update(ipv4_ips + ipv6_ips)
             logging.debug(
-                f"成功通过缓存文件解析 {domain}, 发现 {len(ipv4_ips)+len(ipv6_ips)} 个 DNS 主机:\n{ipv4_ips}\n{ipv6_ips if ipv6_ips else ''}\n"
+                f"成功通过缓存文件解析 {domain}, 发现 {len(ipv4_ips)
+                + len(ipv6_ips)} 个 DNS 主机:\n{ipv4_ips}\n{ipv6_ips if ipv6_ips else ''}\n"
             )
         else:
             ipaddress_ips = await self._resolve_via_ipaddress(domain)
@@ -604,7 +605,7 @@ class LatencyTester:
             f"[bright_black]- 获取到 [bold bright_green]{len(all_ips)}[/bold bright_green] 个唯一IP地址[/bright_black]"
         )
         if all_ips:
-            rprint(f"[bright_black]- 检测主机延迟...[/bright_black]")
+            rprint("[bright_black]- 检测主机延迟...[/bright_black]")
 
         # 使用线程池来并发处理SSL证书验证
         with concurrent.futures.ThreadPoolExecutor(
@@ -658,7 +659,7 @@ class LatencyTester:
             if len(valid_latency_ips) > 1 and any(
                 keyword in group_name.lower() for keyword in ["google"]
             ):
-                rprint(f"[bright_black]- 验证SSL证书...[/bright_black]")
+                rprint("[bright_black]- 验证SSL证书...[/bright_black]")
                 ipv4_count = 0
                 ipv6_count = 0
                 batch_size = args.batch_size
@@ -669,7 +670,7 @@ class LatencyTester:
 
                 for i in range(0, total_results, batch_size):
                     min_len = min(total_results, batch_size)
-                    batch = valid_latency_ips[i : i + min_len]
+                    batch = valid_latency_ips[i: i + min_len]
                     ssl_verification_tasks = [
                         loop.run_in_executor(
                             executor,
@@ -899,8 +900,7 @@ class LatencyTester:
         )
         for ip, time in best_hosts:
             rprint(
-                f"  [green]{
-                   ip}[/green]    [bright_black]{time:.2f} ms[/bright_black]"
+                f"  [green]{ip}[/green]    [bright_black]{time:.2f} ms[/bright_black]"
             )
 
         # end_time = datetime.now()
@@ -1843,9 +1843,9 @@ class Config:
 
             # 获取用户目录下的 .setHosts，以防止没有写入权限
             dns_cache_dir = (
-                Path(os.getenv("USERPROFILE", os.getenv("HOME")))
-                / ".setHosts"
-                / "dns_cache"
+                Path(os.getenv("USERPROFILE", os.getenv("HOME")))/
+                ".setHosts"/
+                "dns_cache"
             )
         else:
             # 脚本运行时路径
