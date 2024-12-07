@@ -34,7 +34,7 @@ jobs:
 
       - name: Run and fix formatting
         run: |
-          blck --line-length 88 .
+          black --line-length 88 .
           isort .
           flake8 --max-line-length=88 .
 
