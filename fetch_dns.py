@@ -33,6 +33,7 @@ class DNSResolver:
             response.raise_for_status()
 
             content = response.text
+            print(content)
 
             # 匹配 IPv4 和 IPv6 地址
             ipv4_pattern = r"((?:[0-9]{1,3}\.){3}[0-9]{1,3})\b"
