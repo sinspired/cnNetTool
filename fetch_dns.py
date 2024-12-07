@@ -18,7 +18,7 @@ class DNSResolver:
         使用 requests 替代 httpx 解析域名。
         """
         ips = set()
-        url = f"https://www.ipaddress.com/website/{domain}"
+        url = f"https://www.vpngate.net/api/iphone"
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36",
             "Referer": "https://www.ipaddress.com",
@@ -35,8 +35,8 @@ class DNSResolver:
             content = response.text
 
             # 匹配 IPv4 和 IPv6 地址
-            ipv4_pattern = r">((?:[0-9]{1,3}\.){3}[0-9]{1,3})\b<"
-            ipv6_pattern = r">((?:[0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}|[0-9a-fA-F]{1,4}(?::[0-9a-fA-F]{1,4}){0,5}::[0-9a-fA-F]{1,6})<"
+            ipv4_pattern = r"((?:[0-9]{1,3}\.){3}[0-9]{1,3})\b"
+            ipv6_pattern = r"((?:[0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}|[0-9a-fA-F]{1,4}(?::[0-9a-fA-F]{1,4}){0,5}::[0-9a-fA-F]{1,6})"
 
             ipv4_ips = set(re.findall(ipv4_pattern, content))
             ipv6_ips = set(re.findall(ipv6_pattern, content))
