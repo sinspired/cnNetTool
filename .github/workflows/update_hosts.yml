@@ -3,6 +3,7 @@ name: Update hosts
 on:
   push:
     paths:
+      - 'update_hosts.yml'
       - 'setHosts.py'
       - 'setHosts_Classic.py'
       - 'requirements.txt'
@@ -35,7 +36,7 @@ jobs:
       - name: Run and fix formatting
         run: |
           #black --line-length 88 .
-          black --line-length 88 --force-exclude setDNS.pyy
+          black --line-length 88 --force-exclude setDNS.py
           isort .
           echo “继续”
           flake8 --max-line-length=88 .
