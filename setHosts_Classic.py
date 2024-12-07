@@ -521,14 +521,14 @@ class DomainResolver:
     async def _resolve_via_ipaddress(self, domain: str) -> Set[str]:
         ips = set()
         url = f"https://www.ipaddress.com/website/{domain}"
-        #headers = {
+        # headers = {
         #    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         #    "AppleWebKit/537.36 (KHTML, like Gecko) "
         #    "Chrome/106.0.0.0 Safari/537.36"
         # }
         headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36",
-        "Referer": "https://www.ipaddress.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36",
+            "Referer": "https://www.ipaddress.com",
         }
 
         try:
