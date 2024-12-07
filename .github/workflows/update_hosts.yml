@@ -34,10 +34,9 @@ jobs:
 
       - name: Run and fix formatting
         run: |
-          flake8 .
           black .
           isort .
-          # flake8 .
+          flake8 --max-line-length=88 .
 
       # 提交修复的代码
       - name: Commit and push fixes
