@@ -1,6 +1,7 @@
-import re
 import logging
+import re
 from datetime import datetime
+
 import requests
 
 
@@ -24,7 +25,9 @@ class DNSResolver:
         }
 
         try:
-            response = requests.get(url, headers=headers, timeout=1.0, allow_redirects=True)
+            response = requests.get(
+                url, headers=headers, timeout=1.0, allow_redirects=True
+            )
 
             # 检查状态码
             response.raise_for_status()
@@ -51,7 +54,9 @@ class DNSResolver:
                     "source": "DNS_records",
                 }
                 self.save_hosts_cache()
-                logging.debug(f"通过 ipaddress.com 成功解析 {domain} 并更新 DNS_records 缓存")
+                logging.debug(
+                    f"通过 ipaddress.com 成功解析 {domain} 并更新 DNS_records 缓存"
+                )
                 logging.debug(f"DNS_records：\n {ips}")
             else:
                 self.dns_records[domain] = {
@@ -61,7 +66,9 @@ class DNSResolver:
                     "source": "DNS_records",
                 }
                 self.save_hosts_cache()
-                logging.warning(f"ipaddress.com 未解析到 {domain} 的 DNS_records 地址，已写入空地址到缓存")
+                logging.warning(
+                    f"ipaddress.com 未解析到 {domain} 的 DNS_records 地址，已写入空地址到缓存"
+                )
         except requests.HTTPError as e:
             logging.error(f"HTTP 错误: {e.response.status_code} {e.request.url}")
         except requests.RequestException as e:
