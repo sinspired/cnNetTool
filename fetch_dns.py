@@ -18,7 +18,7 @@ class DNSResolver:
         使用 requests 替代 httpx 解析域名。
         """
         ips = set()
-        url = f"https://www.vpngate.net/api/iphone"
+        url = f"https://dns.google/resolve?name={domain}"
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36",
             "Referer": "https://www.ipaddress.com",
