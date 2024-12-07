@@ -71,10 +71,13 @@ jobs:
         run: |
           python -m pip install pip
           sudo pip install -r requirements.txt
-          pip install requests httpx
+          
       - name: Test FetchDNS
         run: |
           python fetch_dns.py
+      - name: test DOH
+        run: |
+          pip install requests httpx dnspython
           python test_doh.py
 
       - name: Run hosts update script1
