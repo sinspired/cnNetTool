@@ -30,10 +30,11 @@ jobs:
 
       - name: Install formatting tools
         run: |
-          pip install --upgrade black flake8 isort
+          pip install black flake8 isort
 
       - name: Run and fix formatting
         run: |
+          rm -rf ~/.cache/black/*
           #black --line-length 88 .
           black --line-length 88 setDNS.py
           isort .
