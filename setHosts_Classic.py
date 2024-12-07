@@ -795,9 +795,7 @@ class LatencyTester:
                         cert["notAfter"], "%b %d %H:%M:%S %Y %Z"
                     )
                     if not_after < datetime.now():
-                        logging.debug(
-                            f"{domain} ({ip}) {latency:.0f}ms: 证书已过期"
-                        )
+                        logging.debug(f"{domain} ({ip}) {latency:.0f}ms: 证书已过期")
                         return (ip, latency, False)
 
                     logging.debug(
