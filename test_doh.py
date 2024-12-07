@@ -83,7 +83,6 @@ async def perform_dot_query(domain: str, server: str) -> dict:
         context = ssl.create_default_context()
         context.check_hostname = False
         context.verify_mode = ssl.CERT_NONE
-
         async with httpx.AsyncClient(verify=False) as client:
             response = await client.get(url, timeout=5)
             if response.status_code == 200:
@@ -104,8 +103,6 @@ async def compare_dns_results(domain: str, servers: List[str]):
         if not server_info:
             results.append({'server': server_name, 'error': 'Invalid server'})
             continue
-            
-            
         if server_info['type'] == 'udp':
             result = perform_udp_query(domain, server_info['server'], server_info['port'])
         elif server_info['type'] == 'doh':
@@ -121,11 +118,11 @@ async def main():
     domain = "translate.google.com"
     servers_to_test = ['google', 'cloudflare', 'quad9', 'aliyun', 'cloudflare_doh', '360', 'google_doh']
     results = await compare_dns_results(domain, servers_to_test)
-    
     for result in results:
         print(result)
 
 
 # 运行主函数
-if __name__=="__main__":
+if __name__ == "__main__":
     asyncio.run(main())
+    
