@@ -74,6 +74,7 @@ jobs:
           
       - name: Test FetchDNS
         run: |
+          pip install requests
           python fetch_dns.py
       - name: test DOH
         run: |
