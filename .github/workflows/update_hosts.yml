@@ -40,10 +40,10 @@ jobs:
           python -m pip install --upgrade pip
           sudo pip install -r requirements.txt
       
-          sudo pip install black
-      - name: Check code format
-        run: ｜
-          sudo black --check .
+      - name: 'Run PEP8'
+        uses: quentinguidee/pep8-action@v1
+        with:
+          arguments: '--max-line-length=120'
 
       - name: Run hosts update script1
         run: | 
