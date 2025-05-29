@@ -35,9 +35,8 @@ DOMAINS_TO_TEST = [
     "github.io",
     "tmdb.org",
     "api.github.com",
-    "assets-cdn.github.com",
     "raw.githubusercontent.com",
-    # "4kvm.net",
+    "notime2meet.xyz",
 ]
 
 # DNS服务器列表
