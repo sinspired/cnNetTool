@@ -36,7 +36,6 @@ DOMAINS_TO_TEST = [
     "tmdb.org",
     "api.github.com",
     "raw.githubusercontent.com",
-    "notime2meet.xyz",
 ]
 
 # DNS服务器列表
