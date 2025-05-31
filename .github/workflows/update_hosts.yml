@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Wait for 3 minutes
+        run: sleep 180
+
       - name: Checkout code
         uses: actions/checkout@v4
 
