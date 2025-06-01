@@ -95,6 +95,12 @@ def parse_args():
         type=str,
         help="DNS解析器区域选择,[all、global、china]",
     )
+    parser.add_argument(
+        "-n",
+        "--checkonly",
+        action="store_true",
+        help="仅检测，不自动设置",
+    )
     return parser.parse_args()
 
 
@@ -1908,14 +1914,16 @@ async def main():
         hosts_manager=hosts_manager,
     )
 
-    if not PrivilegeManager.is_admin():
+    if not PrivilegeManager.is_admin() and not args.checkonly:
         rprint(
             "[bold red]需要管理员权限来修改hosts文件。正在尝试提升权限...[/bold red]"
         )
         PrivilegeManager.run_as_admin()
 
     # 启动 Hosts更新器
-    await updater.update_hosts()
+    if not args.checkonly:
+        rprint("[blue on green]正在更新 Hosts 文件...[/blue on green]")
+        await updater.update_hosts()
 
     # 计算程序运行时间
     end_time = datetime.now()

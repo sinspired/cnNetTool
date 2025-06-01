@@ -73,11 +73,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install pip
-          sudo pip install -r requirements.txt
+          pip install -r requirements.txt
 
       - name: Run hosts update script1
         run: | 
-          sudo python3 setHosts_Classic.py
+          python3 setHosts_Classic.py --checkonly
       
       # 提交并推送更新（仅在文件变更时）
       - name: Commit and push changes
