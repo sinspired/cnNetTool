@@ -1036,8 +1036,9 @@ class HostsManager:
         )
 
         # 4. 写入hosts文件
-        with open(self.hosts_file_path, "w") as f:
-            f.write("\n".join(new_content))
+        if not args.checkonly:
+            with open(self.hosts_file_path, "w") as f:
+                f.write("\n".join(new_content))
 
         # 保存 hosts 文本
         with open("hosts", "w") as f:
@@ -1153,7 +1154,7 @@ class HostsUpdater:
                     rprint(f"[bright_black]  - {domain}[/bright_black]")
                     all_entries.extend(new_entries)
 
-        if all_entries and not args.checkonly:
+        if all_entries:
             self.hosts_manager.write_to_hosts_file(all_entries)
             rprint(
                 "\n[blue on green]Hosts 文件更新......................................... [完成][/blue on green]"
