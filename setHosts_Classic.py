@@ -1153,7 +1153,7 @@ class HostsUpdater:
                     rprint(f"[bright_black]  - {domain}[/bright_black]")
                     all_entries.extend(new_entries)
 
-        if all_entries:
+        if all_entries and not args.checkonly:
             self.hosts_manager.write_to_hosts_file(all_entries)
             rprint(
                 "\n[blue on green]Hosts 文件更新......................................... [完成][/blue on green]"
@@ -1921,9 +1921,7 @@ async def main():
         PrivilegeManager.run_as_admin()
 
     # 启动 Hosts更新器
-    if not args.checkonly:
-        rprint("[blue on green]正在更新 Hosts 文件...[/blue on green]")
-        await updater.update_hosts()
+    await updater.update_hosts()
 
     # 计算程序运行时间
     end_time = datetime.now()
