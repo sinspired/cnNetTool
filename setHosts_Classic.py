@@ -935,7 +935,8 @@ class HostsManager:
         return Utils.get_hosts_file_path()
 
     def write_to_hosts_file(self, new_entries: List[str]):
-        Utils.backup_hosts_file(self.hosts_file_path)
+        if not args.checkonly:
+            Utils.backup_hosts_file(self.hosts_file_path)
 
         with open(self.hosts_file_path, "r") as f:
             existing_content = f.read().splitlines()
