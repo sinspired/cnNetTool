@@ -49,7 +49,7 @@ jobs:
           git config --global user.email "actions@github.com"
           git add .
           git commit -m "Fix formatting issues" || echo "No changes to commit"
-          git push
+          git push -f
 
   update-hosts:
     runs-on: ubuntu-latest
