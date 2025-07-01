@@ -34,29 +34,29 @@
 
 ```bash
 
-# cnNetTool Start in 2025-07-01 20:56:32 +08:00
-140.82.113.25	alive.github.com
-140.82.113.25	live.github.com
-140.82.112.5	api.github.com
-140.82.113.9	codeload.github.com
-140.82.114.22	central.github.com
-140.82.113.4	gist.github.com
-140.82.113.4	github.com
-140.82.113.18	github.community
-151.101.1.194	github.global.ssl.fastly.net
-3.5.10.109		github-com.s3.amazonaws.com
-3.5.8.211		github-production-release-asset-2e65be.s3.amazonaws.com
-16.15.216.14	github-production-user-asset-6210df.s3.amazonaws.com
-3.5.28.102		github-production-repository-file-5c1aeb.s3.amazonaws.com
+# cnNetTool Start in 2025-07-01 21:39:22 +08:00
+140.82.112.25	alive.github.com
+140.82.114.26	live.github.com
+140.82.116.6	api.github.com
+140.82.116.10	codeload.github.com
+140.82.112.22	central.github.com
+140.82.116.4	gist.github.com
+140.82.116.4	github.com
+140.82.114.17	github.community
+151.101.129.194	github.global.ssl.fastly.net
+52.217.15.44	github-com.s3.amazonaws.com
+3.5.29.181		github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.193.255	github-production-user-asset-6210df.s3.amazonaws.com
+52.216.38.81	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
-185.199.110.154	github.githubassets.com
-16.15.217.18	github-cloud.s3.amazonaws.com
+185.199.109.154	github.githubassets.com
+52.216.186.155	github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
-185.199.109.153	githubstatus.com
-185.199.109.153	assets-cdn.github.com
-185.199.109.153	github.io
-140.82.114.22	collector.github.com
-140.82.114.22	education.github.com
+185.199.108.153	githubstatus.com
+185.199.108.153	assets-cdn.github.com
+185.199.108.153	github.io
+140.82.113.21	collector.github.com
+140.82.113.21	education.github.com
 185.199.110.133	avatars.githubusercontent.com
 185.199.110.133	avatars0.githubusercontent.com
 185.199.110.133	avatars1.githubusercontent.com
@@ -74,30 +74,46 @@
 185.199.110.133	private-user-images.githubusercontent.com
 185.199.110.133	raw.githubusercontent.com
 185.199.110.133	user-images.githubusercontent.com
-99.86.229.92	tmdb.org
-99.86.229.92	api.tmdb.org
-99.86.229.92	files.tmdb.org
-99.86.229.92	themoviedb.org
-99.86.229.92	api.themoviedb.org
-99.86.229.92	www.themoviedb.org
-99.86.229.92	auth.themoviedb.org
-138.199.9.104	image.tmdb.org
-138.199.9.104	images.tmdb.org
-172.253.62.95	translate.google.com
-172.253.62.95	translate.googleapis.com
-172.253.62.95	translate-pa.googleapis.com
-172.253.62.95	jnn-pa.googleapis.com
-3.166.135.49	plugins.jetbrains.com
-3.166.135.49	download.jetbrains.com
-3.166.135.49	cache-redirector.jetbrains.com
+18.155.192.114	tmdb.org
+18.155.192.114	api.tmdb.org
+18.155.192.114	files.tmdb.org
+18.155.192.114	themoviedb.org
+18.155.192.114	api.themoviedb.org
+18.155.192.114	www.themoviedb.org
+18.155.192.114	auth.themoviedb.org
+143.244.50.211	image.tmdb.org
+143.244.50.211	images.tmdb.org
+52.94.237.74	imdb.com
+52.94.237.74	www.imdb.com
+52.94.237.74	secure.imdb.com
+52.94.237.74	s.media-imdb.com
+52.94.237.74	us.dd.imdb.com
+52.94.237.74	www.imdb.to
+52.94.237.74	imdb-webservice.amazon.com
+52.94.237.74	origin-www.imdb.com
+18.239.227.94	m.media-amazon.com
+18.239.227.94	Images-na.ssl-images-amazon.com
+18.239.227.94	images-fe.ssl-images-amazon.com
+18.239.227.94	images-eu.ssl-images-amazon.com
+18.239.227.94	ia.media-imdb.com
+18.239.227.94	f.media-amazon.com
+18.239.227.94	imdb-video.media-imdb.com
+18.239.227.94	dqpnq362acqdi.cloudfront.net
+172.217.164.103	translate.google.com
+172.217.164.103	translate.googleapis.com
+172.217.164.103	translate-pa.googleapis.com
+172.217.164.103	jnn-pa.googleapis.com
+108.156.224.102	plugins.jetbrains.com
+108.156.224.102	download.jetbrains.com
+108.156.224.102	cache-redirector.jetbrains.com
 
-# Update time: 2025-07-01 20:56:32 +08:00
+# Update time: 2025-07-01 21:39:22 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2025-07-01 20:56:32 +08:00
+以上内容会自动定时更新， 数据更新时间：2025-07-01 21:39:22 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
