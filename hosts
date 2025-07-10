@@ -1,27 +1,27 @@
 
-# cnNetTool Start in 2025-07-10 07:26:33 +08:00
-140.82.114.25	alive.github.com
+# cnNetTool Start in 2025-07-10 10:18:32 +08:00
+140.82.113.26	alive.github.com
 140.82.114.25	live.github.com
-140.82.114.5	api.github.com
-140.82.113.10	codeload.github.com
+140.82.112.6	api.github.com
+140.82.112.9	codeload.github.com
 140.82.114.21	central.github.com
-140.82.114.4	gist.github.com
-140.82.113.4	github.com
-140.82.112.17	github.community
-151.101.1.194	github.global.ssl.fastly.net
-16.182.41.225	github-com.s3.amazonaws.com
-16.15.184.134	github-production-release-asset-2e65be.s3.amazonaws.com
-52.216.35.249	github-production-user-asset-6210df.s3.amazonaws.com
-16.15.184.134	github-production-repository-file-5c1aeb.s3.amazonaws.com
+140.82.112.4	gist.github.com
+140.82.112.3	github.com
+140.82.114.17	github.community
+151.101.193.194	github.global.ssl.fastly.net
+52.216.90.36	github-com.s3.amazonaws.com
+52.216.90.36	github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.184.254	github-production-user-asset-6210df.s3.amazonaws.com
+52.216.90.36	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
 185.199.111.154	github.githubassets.com
-52.216.35.249	github-cloud.s3.amazonaws.com
+52.217.128.65	github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
-185.199.111.153	githubstatus.com
-185.199.111.153	assets-cdn.github.com
-185.199.111.153	github.io
-140.82.114.21	collector.github.com
-140.82.114.21	education.github.com
+185.199.110.153	githubstatus.com
+185.199.110.153	assets-cdn.github.com
+185.199.110.153	github.io
+140.82.114.22	collector.github.com
+140.82.114.22	education.github.com
 185.199.111.133	avatars.githubusercontent.com
 185.199.111.133	avatars0.githubusercontent.com
 185.199.111.133	avatars1.githubusercontent.com
@@ -46,8 +46,8 @@
 3.167.112.71	api.themoviedb.org
 3.167.112.71	www.themoviedb.org
 3.167.112.71	auth.themoviedb.org
-169.150.249.167	image.tmdb.org
-169.150.249.167	images.tmdb.org
+143.244.50.85	image.tmdb.org
+143.244.50.85	images.tmdb.org
 18.67.68.93	imdb.com
 18.67.68.93	www.imdb.com
 18.67.68.93	secure.imdb.com
@@ -56,11 +56,14 @@
 18.67.68.93	www.imdb.to
 18.67.68.93	imdb-webservice.amazon.com
 18.67.68.93	origin-www.imdb.com
-142.251.165.122	translate.google.com
-142.251.165.122	translate.googleapis.com
-142.251.165.122	translate-pa.googleapis.com
-142.251.165.122	jnn-pa.googleapis.com
+172.253.122.154	translate.google.com
+172.253.122.154	translate.googleapis.com
+172.253.122.154	translate-pa.googleapis.com
+172.253.122.154	jnn-pa.googleapis.com
+3.166.160.31	plugins.jetbrains.com
+3.166.160.31	download.jetbrains.com
+3.166.160.31	cache-redirector.jetbrains.com
 
-# Update time: 2025-07-10 07:26:33 +08:00
+# Update time: 2025-07-10 10:18:32 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
