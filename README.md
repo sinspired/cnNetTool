@@ -34,23 +34,23 @@
 
 ```bash
 
-# cnNetTool Start in 2025-08-10 23:27:11 +08:00
-140.82.114.25	alive.github.com
-140.82.113.25	live.github.com
-140.82.112.5	api.github.com
-140.82.112.10	codeload.github.com
+# cnNetTool Start in 2025-08-11 00:32:49 +08:00
+140.82.113.26	alive.github.com
+140.82.112.25	live.github.com
+140.82.116.5	api.github.com
+140.82.116.9	codeload.github.com
 140.82.114.21	central.github.com
-140.82.114.3	gist.github.com
-140.82.114.3	github.com
-140.82.114.17	github.community
-151.101.1.194	github.global.ssl.fastly.net
-3.5.28.228		github-com.s3.amazonaws.com
-54.231.128.193	github-production-release-asset-2e65be.s3.amazonaws.com
-54.231.128.193	github-production-user-asset-6210df.s3.amazonaws.com
-52.216.95.19	github-production-repository-file-5c1aeb.s3.amazonaws.com
+140.82.116.4	gist.github.com
+140.82.116.3	github.com
+140.82.114.18	github.community
+151.101.65.194	github.global.ssl.fastly.net
+52.217.81.180	github-com.s3.amazonaws.com
+52.217.140.1	github-production-release-asset-2e65be.s3.amazonaws.com
+54.231.134.9	github-production-user-asset-6210df.s3.amazonaws.com
+52.217.123.17	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
 185.199.110.154	github.githubassets.com
-3.5.9.108		github-cloud.s3.amazonaws.com
+3.5.3.90		github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
 185.199.110.153	githubstatus.com
 185.199.110.153	assets-cdn.github.com
@@ -74,46 +74,46 @@
 185.199.111.133	private-user-images.githubusercontent.com
 185.199.111.133	raw.githubusercontent.com
 185.199.111.133	user-images.githubusercontent.com
-108.159.227.27	tmdb.org
-108.159.227.27	api.tmdb.org
-108.159.227.27	files.tmdb.org
-108.159.227.27	themoviedb.org
-108.159.227.27	api.themoviedb.org
-108.159.227.27	www.themoviedb.org
-108.159.227.27	auth.themoviedb.org
-169.150.236.100	image.tmdb.org
-169.150.236.100	images.tmdb.org
-3.168.39.73	imdb.com
-3.168.39.73	www.imdb.com
-3.168.39.73	secure.imdb.com
-3.168.39.73	s.media-imdb.com
-3.168.39.73	us.dd.imdb.com
-3.168.39.73	www.imdb.to
-3.168.39.73	imdb-webservice.amazon.com
-3.168.39.73	origin-www.imdb.com
-23.48.99.142	m.media-amazon.com
-23.48.99.142	Images-na.ssl-images-amazon.com
-23.48.99.142	images-fe.ssl-images-amazon.com
-23.48.99.142	images-eu.ssl-images-amazon.com
-23.48.99.142	ia.media-imdb.com
-23.48.99.142	f.media-amazon.com
-23.48.99.142	imdb-video.media-imdb.com
-23.48.99.142	dqpnq362acqdi.cloudfront.net
-142.250.191.202	translate.google.com
-142.250.191.202	translate.googleapis.com
-142.250.191.202	translate-pa.googleapis.com
-142.250.191.202	jnn-pa.googleapis.com
-18.154.185.22	plugins.jetbrains.com
-18.154.185.22	download.jetbrains.com
-18.154.185.22	cache-redirector.jetbrains.com
+18.155.202.127	tmdb.org
+18.155.202.127	api.tmdb.org
+18.155.202.127	files.tmdb.org
+18.155.202.127	themoviedb.org
+18.155.202.127	api.themoviedb.org
+18.155.202.127	www.themoviedb.org
+18.155.202.127	auth.themoviedb.org
+143.244.50.91	image.tmdb.org
+143.244.50.91	images.tmdb.org
+18.155.186.154	imdb.com
+18.155.186.154	www.imdb.com
+18.155.186.154	secure.imdb.com
+18.155.186.154	s.media-imdb.com
+18.155.186.154	us.dd.imdb.com
+18.155.186.154	www.imdb.to
+18.155.186.154	imdb-webservice.amazon.com
+18.155.186.154	origin-www.imdb.com
+18.244.223.83	m.media-amazon.com
+18.244.223.83	Images-na.ssl-images-amazon.com
+18.244.223.83	images-fe.ssl-images-amazon.com
+18.244.223.83	images-eu.ssl-images-amazon.com
+18.244.223.83	ia.media-imdb.com
+18.244.223.83	f.media-amazon.com
+18.244.223.83	imdb-video.media-imdb.com
+18.244.223.83	dqpnq362acqdi.cloudfront.net
+142.250.189.202	translate.google.com
+142.250.189.202	translate.googleapis.com
+142.250.189.202	translate-pa.googleapis.com
+142.250.189.202	jnn-pa.googleapis.com
+18.155.192.119	plugins.jetbrains.com
+18.155.192.119	download.jetbrains.com
+18.155.192.119	cache-redirector.jetbrains.com
 
-# Update time: 2025-08-10 23:27:11 +08:00
+# Update time: 2025-08-11 00:32:49 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2025-08-10 23:27:11 +08:00
+以上内容会自动定时更新， 数据更新时间：2025-08-11 00:32:49 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
