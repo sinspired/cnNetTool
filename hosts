@@ -1,21 +1,21 @@
 
-# cnNetTool Start in 2025-08-16 11:50:04 +08:00
-140.82.114.25	alive.github.com
-140.82.112.25	live.github.com
-140.82.114.5	api.github.com
-140.82.113.9	codeload.github.com
+# cnNetTool Start in 2025-08-16 12:33:18 +08:00
+140.82.113.26	alive.github.com
+140.82.112.26	live.github.com
+140.82.113.5	api.github.com
+140.82.114.10	codeload.github.com
 140.82.112.21	central.github.com
-140.82.113.4	gist.github.com
-140.82.113.4	github.com
+140.82.113.3	gist.github.com
+140.82.113.3	github.com
 140.82.112.17	github.community
-151.101.129.194	github.global.ssl.fastly.net
-52.217.1.4		github-com.s3.amazonaws.com
-3.5.28.174		github-production-release-asset-2e65be.s3.amazonaws.com
-16.182.100.25	github-production-user-asset-6210df.s3.amazonaws.com
-16.15.218.255	github-production-repository-file-5c1aeb.s3.amazonaws.com
+151.101.65.194	github.global.ssl.fastly.net
+54.231.164.177	github-com.s3.amazonaws.com
+16.15.188.5	github-production-release-asset-2e65be.s3.amazonaws.com
+16.15.185.96	github-production-user-asset-6210df.s3.amazonaws.com
+52.217.42.212	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
-185.199.110.154	github.githubassets.com
-16.182.36.89	github-cloud.s3.amazonaws.com
+185.199.108.154	github.githubassets.com
+3.5.10.10		github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
 185.199.109.153	githubstatus.com
 185.199.109.153	assets-cdn.github.com
@@ -39,15 +39,15 @@
 185.199.110.133	private-user-images.githubusercontent.com
 185.199.110.133	raw.githubusercontent.com
 185.199.110.133	user-images.githubusercontent.com
-104.244.43.128	tmdb.org
-104.244.43.128	api.tmdb.org
-104.244.43.128	files.tmdb.org
-104.244.43.128	themoviedb.org
-104.244.43.128	api.themoviedb.org
-104.244.43.128	www.themoviedb.org
-104.244.43.128	auth.themoviedb.org
-169.150.236.104	image.tmdb.org
-169.150.236.104	images.tmdb.org
+108.138.167.116	tmdb.org
+108.138.167.116	api.tmdb.org
+108.138.167.116	files.tmdb.org
+108.138.167.116	themoviedb.org
+108.138.167.116	api.themoviedb.org
+108.138.167.116	www.themoviedb.org
+108.138.167.116	auth.themoviedb.org
+185.93.1.245	image.tmdb.org
+185.93.1.245	images.tmdb.org
 18.154.216.94	imdb.com
 18.154.216.94	www.imdb.com
 18.154.216.94	secure.imdb.com
@@ -56,22 +56,22 @@
 18.154.216.94	www.imdb.to
 18.154.216.94	imdb-webservice.amazon.com
 18.154.216.94	origin-www.imdb.com
-18.238.171.57	m.media-amazon.com
-18.238.171.57	Images-na.ssl-images-amazon.com
-18.238.171.57	images-fe.ssl-images-amazon.com
-18.238.171.57	images-eu.ssl-images-amazon.com
-18.238.171.57	ia.media-imdb.com
-18.238.171.57	f.media-amazon.com
-18.238.171.57	imdb-video.media-imdb.com
-18.238.171.57	dqpnq362acqdi.cloudfront.net
-64.233.169.95	translate.google.com
-64.233.169.95	translate.googleapis.com
-64.233.169.95	translate-pa.googleapis.com
-64.233.169.95	jnn-pa.googleapis.com
-3.170.115.71	plugins.jetbrains.com
-3.170.115.71	download.jetbrains.com
-3.170.115.71	cache-redirector.jetbrains.com
+18.238.171.50	m.media-amazon.com
+18.238.171.50	Images-na.ssl-images-amazon.com
+18.238.171.50	images-fe.ssl-images-amazon.com
+18.238.171.50	images-eu.ssl-images-amazon.com
+18.238.171.50	ia.media-imdb.com
+18.238.171.50	f.media-amazon.com
+18.238.171.50	imdb-video.media-imdb.com
+18.238.171.50	dqpnq362acqdi.cloudfront.net
+173.194.199.94	translate.google.com
+173.194.199.94	translate.googleapis.com
+173.194.199.94	translate-pa.googleapis.com
+173.194.199.94	jnn-pa.googleapis.com
+3.170.115.123	plugins.jetbrains.com
+3.170.115.123	download.jetbrains.com
+3.170.115.123	cache-redirector.jetbrains.com
 
-# Update time: 2025-08-16 11:50:04 +08:00
+# Update time: 2025-08-16 12:33:18 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
