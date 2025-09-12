@@ -34,27 +34,27 @@
 
 ```bash
 
-# cnNetTool Start in 2025-09-12 19:20:36 +08:00
+# cnNetTool Start in 2025-09-12 20:50:16 +08:00
 140.82.114.26	alive.github.com
-140.82.114.25	live.github.com
-140.82.112.5	api.github.com
-140.82.114.10	codeload.github.com
+140.82.114.26	live.github.com
+140.82.113.6	api.github.com
+140.82.113.10	codeload.github.com
 140.82.114.21	central.github.com
 140.82.114.4	gist.github.com
 140.82.114.4	github.com
-140.82.112.17	github.community
-151.101.193.194	github.global.ssl.fastly.net
-16.15.193.49	github-com.s3.amazonaws.com
-3.5.1.131		github-production-release-asset-2e65be.s3.amazonaws.com
-52.217.105.164	github-production-user-asset-6210df.s3.amazonaws.com
-3.5.28.85		github-production-repository-file-5c1aeb.s3.amazonaws.com
+140.82.113.17	github.community
+151.101.65.194	github.global.ssl.fastly.net
+3.5.30.239		github-com.s3.amazonaws.com
+52.217.229.241	github-production-release-asset-2e65be.s3.amazonaws.com
+3.5.28.32		github-production-user-asset-6210df.s3.amazonaws.com
+16.15.180.231	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
-185.199.108.154	github.githubassets.com
-16.15.193.49	github-cloud.s3.amazonaws.com
+185.199.111.154	github.githubassets.com
+3.5.7.192		github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
-185.199.109.153	githubstatus.com
-185.199.109.153	assets-cdn.github.com
-185.199.109.153	github.io
+185.199.108.153	githubstatus.com
+185.199.108.153	assets-cdn.github.com
+185.199.108.153	github.io
 140.82.114.21	collector.github.com
 140.82.114.21	education.github.com
 185.199.110.133	avatars.githubusercontent.com
@@ -74,15 +74,15 @@
 185.199.110.133	private-user-images.githubusercontent.com
 185.199.110.133	raw.githubusercontent.com
 185.199.110.133	user-images.githubusercontent.com
-3.167.163.38	tmdb.org
-3.167.163.38	api.tmdb.org
-3.167.163.38	files.tmdb.org
-3.167.163.38	themoviedb.org
-3.167.163.38	api.themoviedb.org
-3.167.163.38	www.themoviedb.org
-3.167.163.38	auth.themoviedb.org
-169.150.236.105	image.tmdb.org
-169.150.236.105	images.tmdb.org
+18.160.200.13	tmdb.org
+18.160.200.13	api.tmdb.org
+18.160.200.13	files.tmdb.org
+18.160.200.13	themoviedb.org
+18.160.200.13	api.themoviedb.org
+18.160.200.13	www.themoviedb.org
+18.160.200.13	auth.themoviedb.org
+185.93.1.245	image.tmdb.org
+185.93.1.245	images.tmdb.org
 3.168.39.73	imdb.com
 3.168.39.73	www.imdb.com
 3.168.39.73	secure.imdb.com
@@ -91,29 +91,29 @@
 3.168.39.73	www.imdb.to
 3.168.39.73	imdb-webservice.amazon.com
 3.168.39.73	origin-www.imdb.com
-104.114.79.171	m.media-amazon.com
-104.114.79.171	Images-na.ssl-images-amazon.com
-104.114.79.171	images-fe.ssl-images-amazon.com
-104.114.79.171	images-eu.ssl-images-amazon.com
-104.114.79.171	ia.media-imdb.com
-104.114.79.171	f.media-amazon.com
-104.114.79.171	imdb-video.media-imdb.com
-104.114.79.171	dqpnq362acqdi.cloudfront.net
-142.250.191.202	translate.google.com
-142.250.191.202	translate.googleapis.com
-142.250.191.202	translate-pa.googleapis.com
-142.250.191.202	jnn-pa.googleapis.com
-13.225.47.74	plugins.jetbrains.com
-13.225.47.74	download.jetbrains.com
-13.225.47.74	cache-redirector.jetbrains.com
+52.85.12.71	m.media-amazon.com
+52.85.12.71	Images-na.ssl-images-amazon.com
+52.85.12.71	images-fe.ssl-images-amazon.com
+52.85.12.71	images-eu.ssl-images-amazon.com
+52.85.12.71	ia.media-imdb.com
+52.85.12.71	f.media-amazon.com
+52.85.12.71	imdb-video.media-imdb.com
+52.85.12.71	dqpnq362acqdi.cloudfront.net
+192.178.210.95	translate.google.com
+192.178.210.95	translate.googleapis.com
+192.178.210.95	translate-pa.googleapis.com
+192.178.210.95	jnn-pa.googleapis.com
+13.225.47.9	plugins.jetbrains.com
+13.225.47.9	download.jetbrains.com
+13.225.47.9	cache-redirector.jetbrains.com
 
-# Update time: 2025-09-12 19:20:36 +08:00
+# Update time: 2025-09-12 20:50:16 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2025-09-12 19:20:36 +08:00
+以上内容会自动定时更新， 数据更新时间：2025-09-12 20:50:16 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
