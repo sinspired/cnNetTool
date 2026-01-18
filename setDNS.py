@@ -298,10 +298,8 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
                     logger.info(f"跳过虚拟网卡: {interface}")
                     continue
                 if ipv4_dns_list:
-                    logger.debug(
-                        f"设置IPv4 DNS for {interface}:{
-                            ', '.join(ipv4_dns_list)}"
-                    )
+                    logger.debug(f"设置IPv4 DNS for {interface}:{
+                            ', '.join(ipv4_dns_list)}")
                     try:
                         subprocess.run(
                             [
@@ -333,10 +331,8 @@ def set_dns_servers(ipv4_dns_list: list[str], ipv6_dns_list: list[str]):
                     except subprocess.CalledProcessError as e:
                         logger.debug(f"设置IPv4 DNS for {interface}失败: {e}")
                 if ipv6_dns_list:
-                    logger.debug(
-                        f"设置IPv6 DNS for {interface}: {
-                            ', '.join(ipv6_dns_list)}"
-                    )
+                    logger.debug(f"设置IPv6 DNS for {interface}: {
+                            ', '.join(ipv6_dns_list)}")
                     try:
                         subprocess.run(
                             [
