@@ -647,11 +647,32 @@ class HostsManager:
         """根据操作系统自动获取 hosts 文件路径。"""
         return Utils.get_hosts_file_path()
 
+    def _read_hosts_file_lines(self) -> List[str]:
+        """以尽可能稳健的方式读取系统 hosts 文件。
+
+        说明:
+        - Windows 的 hosts 可能是 UTF-8（含或不含 BOM）、GBK 或其它本地编码。
+        - 这里优先尝试 UTF-8-SIG 以兼容 BOM，其次 UTF-8/GBK，再退回到更宽松的解码。
+        """
+        encodings_to_try = ("utf-8-sig", "utf-8", "gbk", "cp1252", "latin-1")
+        for enc in encodings_to_try:
+            try:
+                with open(self.hosts_file_path, "r", encoding=enc) as f:
+                    return f.read().splitlines()
+            except UnicodeDecodeError:
+                continue
+            except FileNotFoundError:
+                # 如果文件不存在，返回空列表，后续逻辑将按新建处理
+                return []
+
+        # 最后兜底：替换非法字符，避免解码失败中断程序
+        with open(self.hosts_file_path, "r", encoding="utf-8", errors="replace") as f:
+            return f.read().splitlines()
+
     def write_to_hosts_file(self, new_entries: List[str]):
         Utils.backup_hosts_file(self.hosts_file_path)
 
-        with open(self.hosts_file_path, "r") as f:
-            existing_content = f.read().splitlines()
+        existing_content = self._read_hosts_file_lines()
 
         new_domains = {
             entry.split()[1] for entry in new_entries if len(entry.split()) >= 2
@@ -748,12 +769,12 @@ class HostsManager:
             ]
         )
 
-        # 4. 写入hosts文件
-        with open(self.hosts_file_path, "w") as f:
+        # 4. 写入hosts文件（使用 UTF-8 带 BOM，兼容 Windows 记事本与可能的现有文件编码）
+        with open(self.hosts_file_path, "w", encoding="utf-8-sig", newline="\n") as f:
             f.write("\n".join(new_content))
 
         # 保存 hosts 文本
-        with open("hosts", "w") as f:
+        with open("hosts", "w", encoding="utf-8-sig", newline="\n") as f:
             f.write("\n".join(save_hosts_content))
             rprint(
                 f"\n[blue]已生成 hosts 文件,位于: [underline]hosts[/underline][/blue] (共 {len(new_entries)} 个条目)"

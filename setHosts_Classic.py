@@ -934,12 +934,34 @@ class HostsManager:
         """根据操作系统自动获取 hosts 文件路径。"""
         return Utils.get_hosts_file_path()
 
+    @staticmethod
+    def _read_file_lines_with_fallback(path: str):
+        """
+        以多种编码尝试读取文本文件，返回(行列表, 选用编码)。
+
+        主要用于在 Windows 上处理包含 UTF-8 BOM 或 GBK 的 hosts 文件，
+        避免因系统默认编码读取失败导致的 UnicodeDecodeError。
+        """
+        encodings = ["utf-8-sig", "utf-8", "gbk", "cp936", "mbcs", "latin-1"]
+        for enc in encodings:
+            try:
+                with open(path, "r", encoding=enc) as f:
+                    return f.read().splitlines(), enc
+            except UnicodeDecodeError:
+                continue
+            except FileNotFoundError:
+                return [], "utf-8"
+        # 兜底：忽略无法解码的字符，保证不抛异常
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            return f.read().splitlines(), "utf-8"
+
     def write_to_hosts_file(self, new_entries: List[str]):
         if not args.checkonly:
             Utils.backup_hosts_file(self.hosts_file_path)
 
-        with open(self.hosts_file_path, "r") as f:
-            existing_content = f.read().splitlines()
+        existing_content, original_encoding = self._read_file_lines_with_fallback(
+            self.hosts_file_path
+        )
 
         new_domains = {
             entry.split()[1] for entry in new_entries if len(entry.split()) >= 2
@@ -1038,11 +1060,21 @@ class HostsManager:
 
         # 4. 写入hosts文件
         if not args.checkonly:
-            with open(self.hosts_file_path, "w") as f:
-                f.write("\n".join(new_content))
+            # 尽量使用原文件编码写回，若原编码为 mbcs/latin-1 也可保持兼容
+            try:
+                with open(
+                    self.hosts_file_path, "w", encoding=original_encoding, newline="\n"
+                ) as f:
+                    f.write("\n".join(new_content))
+            except Exception:
+                # 兜底：写入为 utf-8-sig，避免再次读取失败
+                with open(
+                    self.hosts_file_path, "w", encoding="utf-8-sig", newline="\n"
+                ) as f:
+                    f.write("\n".join(new_content))
 
         # 保存 hosts 文本
-        with open("hosts", "w") as f:
+        with open("hosts", "w", encoding="utf-8", newline="\n") as f:
             f.write("\n".join(save_hosts_content))
             rprint(
                 f"\n[blue]已生成 hosts 文件,位于: [underline]hosts[/underline][/blue] (共 {len(new_entries)} 个条目)"

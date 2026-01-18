@@ -1,0 +1,6 @@
+aiohttp
+dnspython
+httpx
+prettytable
+rich
+wcwidth
