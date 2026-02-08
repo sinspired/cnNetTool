@@ -34,29 +34,29 @@
 
 ```bash
 
-# cnNetTool Start in 2026-02-08 18:37:26 +08:00
-140.82.113.25	alive.github.com
-140.82.113.26	live.github.com
+# cnNetTool Start in 2026-02-08 19:31:16 +08:00
+140.82.112.25	alive.github.com
+140.82.113.25	live.github.com
 140.82.113.6	api.github.com
-140.82.113.10	codeload.github.com
-140.82.113.21	central.github.com
-140.82.114.4	gist.github.com
-140.82.113.4	github.com
-140.82.112.17	github.community
+140.82.113.9	codeload.github.com
+140.82.112.22	central.github.com
+140.82.113.4	gist.github.com
+140.82.114.4	github.com
+140.82.112.18	github.community
 151.101.65.194	github.global.ssl.fastly.net
-52.216.51.49	github-com.s3.amazonaws.com
-52.217.233.161	github-production-release-asset-2e65be.s3.amazonaws.com
-52.217.233.161	github-production-user-asset-6210df.s3.amazonaws.com
-52.217.233.161	github-production-repository-file-5c1aeb.s3.amazonaws.com
+16.15.183.112	github-com.s3.amazonaws.com
+16.15.199.204	github-production-release-asset-2e65be.s3.amazonaws.com
+52.216.52.209	github-production-user-asset-6210df.s3.amazonaws.com
+54.231.227.81	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
 185.199.109.154	github.githubassets.com
-3.5.12.227		github-cloud.s3.amazonaws.com
+16.15.178.80	github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
-185.199.110.153	githubstatus.com
-185.199.110.153	assets-cdn.github.com
-185.199.110.153	github.io
-140.82.113.21	collector.github.com
-140.82.113.21	education.github.com
+185.199.109.153	githubstatus.com
+185.199.109.153	assets-cdn.github.com
+185.199.109.153	github.io
+140.82.112.21	collector.github.com
+140.82.112.21	education.github.com
 185.199.108.133	avatars.githubusercontent.com
 185.199.108.133	avatars0.githubusercontent.com
 185.199.108.133	avatars1.githubusercontent.com
@@ -74,46 +74,46 @@
 185.199.108.133	private-user-images.githubusercontent.com
 185.199.108.133	raw.githubusercontent.com
 185.199.108.133	user-images.githubusercontent.com
-3.170.19.104	tmdb.org
-3.170.19.104	api.tmdb.org
-3.170.19.104	files.tmdb.org
-3.170.19.104	themoviedb.org
-3.170.19.104	api.themoviedb.org
-3.170.19.104	www.themoviedb.org
-3.170.19.104	auth.themoviedb.org
-185.93.1.246	image.tmdb.org
-185.93.1.246	images.tmdb.org
-18.67.70.32	imdb.com
-18.67.70.32	www.imdb.com
-18.67.70.32	secure.imdb.com
-18.67.70.32	s.media-imdb.com
-18.67.70.32	us.dd.imdb.com
-18.67.70.32	www.imdb.to
-18.67.70.32	imdb-webservice.amazon.com
-18.67.70.32	origin-www.imdb.com
-3.171.55.184	m.media-amazon.com
-3.171.55.184	Images-na.ssl-images-amazon.com
-3.171.55.184	images-fe.ssl-images-amazon.com
-3.171.55.184	images-eu.ssl-images-amazon.com
-3.171.55.184	ia.media-imdb.com
-3.171.55.184	f.media-amazon.com
-3.171.55.184	imdb-video.media-imdb.com
-3.171.55.184	dqpnq362acqdi.cloudfront.net
-172.217.197.91	translate.google.com
-172.217.197.91	translate.googleapis.com
-172.217.197.91	translate-pa.googleapis.com
-172.217.197.91	jnn-pa.googleapis.com
-52.85.193.47	plugins.jetbrains.com
-52.85.193.47	download.jetbrains.com
-52.85.193.47	cache-redirector.jetbrains.com
+18.155.173.53	tmdb.org
+18.155.173.53	api.tmdb.org
+18.155.173.53	files.tmdb.org
+18.155.173.53	themoviedb.org
+18.155.173.53	api.themoviedb.org
+18.155.173.53	www.themoviedb.org
+18.155.173.53	auth.themoviedb.org
+143.244.50.83	image.tmdb.org
+143.244.50.83	images.tmdb.org
+18.155.175.50	imdb.com
+18.155.175.50	www.imdb.com
+18.155.175.50	secure.imdb.com
+18.155.175.50	s.media-imdb.com
+18.155.175.50	us.dd.imdb.com
+18.155.175.50	www.imdb.to
+18.155.175.50	imdb-webservice.amazon.com
+18.155.175.50	origin-www.imdb.com
+151.101.129.16	m.media-amazon.com
+151.101.129.16	Images-na.ssl-images-amazon.com
+151.101.129.16	images-fe.ssl-images-amazon.com
+151.101.129.16	images-eu.ssl-images-amazon.com
+151.101.129.16	ia.media-imdb.com
+151.101.129.16	f.media-amazon.com
+151.101.129.16	imdb-video.media-imdb.com
+151.101.129.16	dqpnq362acqdi.cloudfront.net
+216.239.32.40	translate.google.com
+216.239.32.40	translate.googleapis.com
+216.239.32.40	translate-pa.googleapis.com
+216.239.32.40	jnn-pa.googleapis.com
+18.155.173.56	plugins.jetbrains.com
+18.155.173.56	download.jetbrains.com
+18.155.173.56	cache-redirector.jetbrains.com
 
-# Update time: 2026-02-08 18:37:26 +08:00
+# Update time: 2026-02-08 19:31:16 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2026-02-08 18:37:26 +08:00
+以上内容会自动定时更新， 数据更新时间：2026-02-08 19:31:16 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
