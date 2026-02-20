@@ -34,86 +34,86 @@
 
 ```bash
 
-# cnNetTool Start in 2026-02-20 12:54:00 +08:00
-140.82.114.25	alive.github.com
-140.82.113.25	live.github.com
-140.82.112.5	api.github.com
-140.82.114.9	codeload.github.com
+# cnNetTool Start in 2026-02-20 14:00:49 +08:00
+140.82.113.25	alive.github.com
+140.82.114.26	live.github.com
+140.82.116.6	api.github.com
+140.82.116.9	codeload.github.com
 140.82.113.21	central.github.com
-140.82.114.3	gist.github.com
-140.82.113.3	github.com
+140.82.116.3	gist.github.com
+140.82.116.4	github.com
 140.82.114.17	github.community
-151.101.193.194	github.global.ssl.fastly.net
-54.231.138.121	github-com.s3.amazonaws.com
-3.5.30.151		github-production-release-asset-2e65be.s3.amazonaws.com
-54.231.164.145	github-production-user-asset-6210df.s3.amazonaws.com
-54.231.138.121	github-production-repository-file-5c1aeb.s3.amazonaws.com
+146.75.93.194	github.global.ssl.fastly.net
+16.182.37.57	github-com.s3.amazonaws.com
+16.182.98.233	github-production-release-asset-2e65be.s3.amazonaws.com
+3.5.8.125		github-production-user-asset-6210df.s3.amazonaws.com
+16.15.203.102	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
-185.199.110.154	github.githubassets.com
-54.231.171.161	github-cloud.s3.amazonaws.com
+185.199.108.154	github.githubassets.com
+16.15.181.217	github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
 185.199.110.153	githubstatus.com
 185.199.110.153	assets-cdn.github.com
 185.199.110.153	github.io
 140.82.113.21	collector.github.com
 140.82.113.21	education.github.com
-185.199.109.133	avatars.githubusercontent.com
-185.199.109.133	avatars0.githubusercontent.com
-185.199.109.133	avatars1.githubusercontent.com
-185.199.109.133	avatars2.githubusercontent.com
-185.199.109.133	avatars3.githubusercontent.com
-185.199.109.133	avatars4.githubusercontent.com
-185.199.109.133	avatars5.githubusercontent.com
-185.199.109.133	camo.githubusercontent.com
-185.199.109.133	cloud.githubusercontent.com
-185.199.109.133	desktop.githubusercontent.com
-185.199.109.133	favicons.githubusercontent.com
-185.199.109.133	github.map.fastly.net
-185.199.109.133	media.githubusercontent.com
-185.199.109.133	objects.githubusercontent.com
-185.199.109.133	private-user-images.githubusercontent.com
-185.199.109.133	raw.githubusercontent.com
-185.199.109.133	user-images.githubusercontent.com
-104.244.43.128	tmdb.org
-104.244.43.128	api.tmdb.org
-104.244.43.128	files.tmdb.org
-104.244.43.128	themoviedb.org
-104.244.43.128	api.themoviedb.org
-104.244.43.128	www.themoviedb.org
-104.244.43.128	auth.themoviedb.org
-185.93.1.245	image.tmdb.org
-185.93.1.245	images.tmdb.org
-3.168.33.143	imdb.com
-3.168.33.143	www.imdb.com
-3.168.33.143	secure.imdb.com
-3.168.33.143	s.media-imdb.com
-3.168.33.143	us.dd.imdb.com
-3.168.33.143	www.imdb.to
-3.168.33.143	imdb-webservice.amazon.com
-3.168.33.143	origin-www.imdb.com
-143.204.155.35	m.media-amazon.com
-143.204.155.35	Images-na.ssl-images-amazon.com
-143.204.155.35	images-fe.ssl-images-amazon.com
-143.204.155.35	images-eu.ssl-images-amazon.com
-143.204.155.35	ia.media-imdb.com
-143.204.155.35	f.media-amazon.com
-143.204.155.35	imdb-video.media-imdb.com
-143.204.155.35	dqpnq362acqdi.cloudfront.net
-142.250.190.138	translate.google.com
-142.250.190.138	translate.googleapis.com
-142.250.190.138	translate-pa.googleapis.com
-142.250.190.138	jnn-pa.googleapis.com
-3.167.138.5	plugins.jetbrains.com
-3.167.138.5	download.jetbrains.com
-3.167.138.5	cache-redirector.jetbrains.com
+185.199.111.133	avatars.githubusercontent.com
+185.199.111.133	avatars0.githubusercontent.com
+185.199.111.133	avatars1.githubusercontent.com
+185.199.111.133	avatars2.githubusercontent.com
+185.199.111.133	avatars3.githubusercontent.com
+185.199.111.133	avatars4.githubusercontent.com
+185.199.111.133	avatars5.githubusercontent.com
+185.199.111.133	camo.githubusercontent.com
+185.199.111.133	cloud.githubusercontent.com
+185.199.111.133	desktop.githubusercontent.com
+185.199.111.133	favicons.githubusercontent.com
+185.199.111.133	github.map.fastly.net
+185.199.111.133	media.githubusercontent.com
+185.199.111.133	objects.githubusercontent.com
+185.199.111.133	private-user-images.githubusercontent.com
+185.199.111.133	raw.githubusercontent.com
+185.199.111.133	user-images.githubusercontent.com
+18.238.96.66	tmdb.org
+18.238.96.66	api.tmdb.org
+18.238.96.66	files.tmdb.org
+18.238.96.66	themoviedb.org
+18.238.96.66	api.themoviedb.org
+18.238.96.66	www.themoviedb.org
+18.238.96.66	auth.themoviedb.org
+143.244.50.211	image.tmdb.org
+143.244.50.211	images.tmdb.org
+18.155.175.50	imdb.com
+18.155.175.50	www.imdb.com
+18.155.175.50	secure.imdb.com
+18.155.175.50	s.media-imdb.com
+18.155.175.50	us.dd.imdb.com
+18.155.175.50	www.imdb.to
+18.155.175.50	imdb-webservice.amazon.com
+18.155.175.50	origin-www.imdb.com
+18.238.92.12	m.media-amazon.com
+18.238.92.12	Images-na.ssl-images-amazon.com
+18.238.92.12	images-fe.ssl-images-amazon.com
+18.238.92.12	images-eu.ssl-images-amazon.com
+18.238.92.12	ia.media-imdb.com
+18.238.92.12	f.media-amazon.com
+18.238.92.12	imdb-video.media-imdb.com
+18.238.92.12	dqpnq362acqdi.cloudfront.net
+142.250.72.138	translate.google.com
+142.250.72.138	translate.googleapis.com
+142.250.72.138	translate-pa.googleapis.com
+142.250.72.138	jnn-pa.googleapis.com
+18.155.173.56	plugins.jetbrains.com
+18.155.173.56	download.jetbrains.com
+18.155.173.56	cache-redirector.jetbrains.com
 
-# Update time: 2026-02-20 12:54:00 +08:00
+# Update time: 2026-02-20 14:00:49 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2026-02-20 12:54:00 +08:00
+以上内容会自动定时更新， 数据更新时间：2026-02-20 14:00:49 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
