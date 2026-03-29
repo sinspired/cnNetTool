@@ -34,29 +34,29 @@
 
 ```bash
 
-# cnNetTool Start in 2026-03-29 23:40:59 +08:00
-140.82.112.25	alive.github.com
-140.82.113.26	live.github.com
-140.82.114.5	api.github.com
-140.82.112.9	codeload.github.com
-140.82.113.21	central.github.com
-140.82.114.3	gist.github.com
-140.82.112.4	github.com
-140.82.113.18	github.community
-151.101.65.194	github.global.ssl.fastly.net
-52.216.39.25	github-com.s3.amazonaws.com
-52.217.201.129	github-production-release-asset-2e65be.s3.amazonaws.com
-3.5.2.1		github-production-user-asset-6210df.s3.amazonaws.com
-52.217.201.129	github-production-repository-file-5c1aeb.s3.amazonaws.com
+# cnNetTool Start in 2026-03-30 00:45:58 +08:00
+140.82.113.25	alive.github.com
+140.82.113.25	live.github.com
+140.82.112.5	api.github.com
+140.82.113.10	codeload.github.com
+140.82.112.21	central.github.com
+140.82.112.3	gist.github.com
+140.82.112.3	github.com
+140.82.114.17	github.community
+151.101.1.194	github.global.ssl.fastly.net
+16.15.191.103	github-com.s3.amazonaws.com
+52.217.71.236	github-production-release-asset-2e65be.s3.amazonaws.com
+54.231.168.161	github-production-user-asset-6210df.s3.amazonaws.com
+16.15.191.83	github-production-repository-file-5c1aeb.s3.amazonaws.com
 13.107.42.16	pipelines.actions.githubusercontent.com
-185.199.110.154	github.githubassets.com
-16.182.72.217	github-cloud.s3.amazonaws.com
+185.199.109.154	github.githubassets.com
+54.231.168.161	github-cloud.s3.amazonaws.com
 192.0.66.2		github.blog
-185.199.111.153	githubstatus.com
-185.199.111.153	assets-cdn.github.com
-185.199.111.153	github.io
-140.82.112.21	collector.github.com
-140.82.112.21	education.github.com
+185.199.110.153	githubstatus.com
+185.199.110.153	assets-cdn.github.com
+185.199.110.153	github.io
+140.82.113.21	collector.github.com
+140.82.113.21	education.github.com
 185.199.110.133	avatars.githubusercontent.com
 185.199.110.133	avatars0.githubusercontent.com
 185.199.110.133	avatars1.githubusercontent.com
@@ -74,13 +74,13 @@
 185.199.110.133	private-user-images.githubusercontent.com
 185.199.110.133	raw.githubusercontent.com
 185.199.110.133	user-images.githubusercontent.com
-3.170.19.13	tmdb.org
-3.170.19.13	api.tmdb.org
-3.170.19.13	files.tmdb.org
-3.170.19.13	themoviedb.org
-3.170.19.13	api.themoviedb.org
-3.170.19.13	www.themoviedb.org
-3.170.19.13	auth.themoviedb.org
+18.160.10.119	tmdb.org
+18.160.10.119	api.tmdb.org
+18.160.10.119	files.tmdb.org
+18.160.10.119	themoviedb.org
+18.160.10.119	api.themoviedb.org
+18.160.10.119	www.themoviedb.org
+18.160.10.119	auth.themoviedb.org
 169.150.236.97	image.tmdb.org
 169.150.236.97	images.tmdb.org
 18.67.70.32	imdb.com
@@ -91,29 +91,29 @@
 18.67.70.32	www.imdb.to
 18.67.70.32	imdb-webservice.amazon.com
 18.67.70.32	origin-www.imdb.com
-13.226.211.35	m.media-amazon.com
-13.226.211.35	Images-na.ssl-images-amazon.com
-13.226.211.35	images-fe.ssl-images-amazon.com
-13.226.211.35	images-eu.ssl-images-amazon.com
-13.226.211.35	ia.media-imdb.com
-13.226.211.35	f.media-amazon.com
-13.226.211.35	imdb-video.media-imdb.com
-13.226.211.35	dqpnq362acqdi.cloudfront.net
-142.251.165.152	translate.google.com
-142.251.165.152	translate.googleapis.com
-142.251.165.152	translate-pa.googleapis.com
-142.251.165.152	jnn-pa.googleapis.com
-13.226.238.80	plugins.jetbrains.com
-13.226.238.80	download.jetbrains.com
-13.226.238.80	cache-redirector.jetbrains.com
+18.67.76.14	m.media-amazon.com
+18.67.76.14	Images-na.ssl-images-amazon.com
+18.67.76.14	images-fe.ssl-images-amazon.com
+18.67.76.14	images-eu.ssl-images-amazon.com
+18.67.76.14	ia.media-imdb.com
+18.67.76.14	f.media-amazon.com
+18.67.76.14	imdb-video.media-imdb.com
+18.67.76.14	dqpnq362acqdi.cloudfront.net
+64.233.180.139	translate.google.com
+64.233.180.139	translate.googleapis.com
+64.233.180.139	translate-pa.googleapis.com
+64.233.180.139	jnn-pa.googleapis.com
+13.226.238.11	plugins.jetbrains.com
+13.226.238.11	download.jetbrains.com
+13.226.238.11	cache-redirector.jetbrains.com
 
-# Update time: 2026-03-29 23:40:59 +08:00
+# Update time: 2026-03-30 00:45:58 +08:00
 # GitHub仓库: https://github.com/sinspired/cnNetTool
 # cnNetTool End
 
 ```
 
-以上内容会自动定时更新， 数据更新时间：2026-03-29 23:40:59 +08:00
+以上内容会自动定时更新， 数据更新时间：2026-03-30 00:45:58 +08:00
 
 > [!NOTE]
 > 由于数据获取于非本地网络环境，请自行测试可用性，否则请采用方法 1，使用本地网络环境自动设置。
